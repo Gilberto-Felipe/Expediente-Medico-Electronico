@@ -2,7 +2,7 @@
 =            Sidebar menu           =
 =============================================*/
 
-$('.sidebar-menu').tree();
+// $('.sidebar-menu').tree();
 
 
 /*=============================================
@@ -48,16 +48,6 @@ INPUT-MASKS
 $('.fechas').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' });
 //Telephone US mask
 $('.tel_mask').inputmask(); 
-
-/*=============================================
-iCHECK FOR CHECKBOX & RADIO-BUTTONS
-=============================================*/
-$('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
-
-	checkboxClass: 'icheckbox_minimal-blue',
-	radioClass   : 'iradio_minimal-blue'
-	
-});
 
 
 /*=============================================

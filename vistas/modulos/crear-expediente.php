@@ -59,7 +59,7 @@
                                                     class="col-sm-4 control-label">Nombre(s)</label>
                                                 <div class="col-sm-8">
                                                     <input type="text" class="form-control" id="nombre_paciente"
-                                                        placeholder="Juan Ignacio" required>
+                                                        name="paciente" placeholder="Juan Ignacio" required>
                                                 </div>
                                             </div>
 
@@ -68,7 +68,7 @@
                                                     paterno</label>
                                                 <div class="col-sm-8">
                                                     <input type="text" class="form-control" id="apellidop_paciente"
-                                                        placeholder="Guzmán" required>
+                                                        name="apellidop_paciente" placeholder="Guzmán" required>
                                                 </div>
                                             </div>
 
@@ -77,7 +77,7 @@
                                                     materno</label>
                                                 <div class="col-sm-8">
                                                     <input type="text" class="form-control" id="apellidom_paciente"
-                                                        placeholder="Lupercio" required>
+                                                        name="apellidom_paciente" placeholder="Lupercio" required>
                                                 </div>
                                             </div>
 
@@ -85,7 +85,8 @@
                                                 <label for="fecha_nacimiento" class="col-sm-4 control-label">Fecha
                                                     nacimiento</label>
                                                 <div class="col-sm-8">
-                                                    <input type="text" id="fecha_nacimiento" required class="form-control fechas"
+                                                    <input type="text" id="fecha_nacimiento" name="fecha_nacimiento"
+                                                        required class="form-control fechas"
                                                         data-inputmask="'alias': 'dd/mm/yyyy'" data-mask>
                                                 </div>
                                             </div><!-- /.form-group -->
@@ -95,15 +96,14 @@
                                                 <div class="col-sm-8">
                                                     <div class="radio col-sm-4">
                                                         <label>
-                                                            <input type="radio" name="sexo" id="optionsRadios1"
-                                                                value="0" checked="">
+                                                            <input type="radio" name="sexo" id="mujer" value="0"
+                                                                required>
                                                             Mujer
                                                         </label>
                                                     </div>
                                                     <div class="radio col-sm-8">
                                                         <label>
-                                                            <input type="radio" name="sexo" id="optionsRadios2"
-                                                                value="1">
+                                                            <input type="radio" name="sexo" id="hombre" value="1">
                                                             Hombre
                                                         </label>
                                                     </div>
@@ -114,12 +114,12 @@
                                                 <label for="edo_civil" class="col-sm-4 control-label">Estado
                                                     civil</label>
                                                 <div class="col-sm-8">
-                                                    <select class="form-control" name="edo_civil" id="edo_civil"
+                                                    <select class="form-control" id="edo_civil" name="edo_civil"
                                                         required>
                                                         <option value="">-- Elige una opción --</option>
-                                                        <option value="1">Soltero</option>
-                                                        <option value="2">Casado</option>
-                                                        <option value="3">Viudo</option>
+                                                        <option value="1">Soltero/a</option>
+                                                        <option value="2">Casado/a</option>
+                                                        <option value="3">Viudo/a</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -128,7 +128,7 @@
                                                 <label for="email_paciente" class="col-sm-4 control-label">Email</label>
                                                 <div class="col-sm-8">
                                                     <input type="email" class="form-control" id="email_paciente"
-                                                        placeholder="jlupercio@gmail.com">
+                                                        name="email_paciente" placeholder="jlupercio@gmail.com">
                                                 </div>
                                             </div>
 
@@ -136,8 +136,9 @@
                                                 <label for="tel_paciente"
                                                     class="col-sm-4 control-label">Teléfono</label>
                                                 <div class="col-sm-8">
-                                                    <input type="tel" required class="form-control tel_mask" id="tel_paciente"
-                                                        data-inputmask="'mask': '(999) 999-9999'" data-mask>
+                                                    <input type="tel" class="form-control tel_mask" id="tel_paciente"
+                                                        name="tel_paciente" data-inputmask="'mask': '(999) 999-9999'"
+                                                        data-mask required>
                                                 </div>
                                             </div>
 
@@ -146,7 +147,7 @@
                                                     class="col-sm-4 control-label">Dirección</label>
                                                 <div class="col-sm-8">
                                                     <input type="text" class="form-control" id="direccion_paciente"
-                                                        placeholder="x1,y1" required>
+                                                        name="direccion_paciente" placeholder="x1,y1" required>
                                                 </div>
                                             </div>
 
@@ -170,7 +171,8 @@
                                                 <label for="tipo_sangre" class="col-sm-4 control-label">Tipo de
                                                     sangre</label>
                                                 <div class="col-sm-8">
-                                                    <select class="form-control" id="tipo_sangre" required>
+                                                    <select class="form-control" id="tipo_sangre" name="tipo_sangre"
+                                                        required>
                                                         <option value="">-- Selecciona tipo sangre --</option>
                                                         <option value="1">A+</option>
                                                         <option value="2">A-</option>
@@ -187,8 +189,8 @@
                                             <div class="form-group">
                                                 <label for="alergias" class="col-sm-4 control-label">Alergias</label>
                                                 <div class="col-sm-8">
-                                                    <textarea id="alergias" class="form-control" rows="2" cols="50"
-                                                        style="resize:none;" placeholder="Escribe..."
+                                                    <textarea class="form-control" id="alergias" name="alergias"
+                                                        rows="2" cols="50" style="resize:none;" placeholder="Escribe..."
                                                         spellcheck="false"></textarea>
                                                 </div>
                                             </div>
@@ -197,9 +199,9 @@
                                                 <label for="antecedentes_med"
                                                     class="col-sm-4 control-label">Antecedentes médicos</label>
                                                 <div class="col-sm-8">
-                                                    <textarea id="antecedentes_med" class="form-control" rows="3"
-                                                        cols="50" style="resize:none;" placeholder="Escribe..."
-                                                        spellcheck="false"></textarea>
+                                                    <textarea class="form-control" id="antecedentes_med"
+                                                        name="antecedentes_med" rows="3" cols="50" style="resize:none;"
+                                                        placeholder="Escribe..." spellcheck="false"></textarea>
                                                 </div>
                                             </div>
 
@@ -207,9 +209,9 @@
                                                 <label for="antecedentes_fam"
                                                     class="col-sm-4 control-label">Antecedentes familiares</label>
                                                 <div class="col-sm-8">
-                                                    <textarea id="antecedentes_fam" class="form-control" rows="3"
-                                                        cols="50" style="resize:none;" placeholder="Escribe..."
-                                                        spellcheck="false"></textarea>
+                                                    <textarea class="form-control" id="antecedentes_fam"
+                                                        name="antecedentes_fam" rows="3" cols="50" style="resize:none;"
+                                                        placeholder="Escribe..." spellcheck="false"></textarea>
                                                 </div>
                                             </div>
                                         </div><!-- /.box-body -->
@@ -234,7 +236,7 @@
                                                     seguro</label>
                                                 <div class="col-sm-8">
                                                     <input type="text" class="form-control" id="num_seguro"
-                                                        placeholder="00001280" required>
+                                                        name="num_seguro" placeholder="00001280" required>
                                                 </div>
                                             </div>
 
@@ -243,7 +245,7 @@
                                                     class="col-sm-4 control-label">Aseguradora</label>
                                                 <div class="col-sm-8">
                                                     <input type="text" class="form-control" id="aseguradora"
-                                                        placeholder="Seguros Potosí" required>
+                                                        name="aseguradora" placeholder="Seguros Potosí" required>
                                                 </div>
                                             </div>
 
@@ -252,7 +254,8 @@
                                                     covertura</label>
                                                 <div class="col-sm-8">
                                                     <input type="text" class="form-control" id="tipo_covertura"
-                                                        placeholder="Alta: $ 200,000 M.N." required>
+                                                        name="tipo_covertura" placeholder="Alta: $ 200,000 M.N."
+                                                        required>
                                                 </div>
                                             </div>
 
@@ -260,8 +263,9 @@
                                                 <label for="fecha_vencimiento" class="col-sm-4 control-label">Fecha
                                                     vencimiento</label>
                                                 <div class="col-sm-8">
-                                                    <input type="text" id="fecha_vencimiento" class="form-control fechas"
-                                                        required data-inputmask="'alias': 'dd/mm/yyyy'" data-mask>
+                                                    <input type="text" id="fecha_vencimiento" name="fecha_vencimiento"
+                                                        class="form-control fechas" required
+                                                        data-inputmask="'alias': 'dd/mm/yyyy'" data-mask>
                                                 </div>
                                             </div><!-- /.form-group -->
 
@@ -286,7 +290,7 @@
 
                                                 <div class="col-sm-8">
                                                     <input type="text" class="form-control" id="nombre_contacto"
-                                                        placeholder="José de Jesús" required>
+                                                        name="nombre_contacto" placeholder="José de Jesús" required>
                                                 </div>
                                             </div>
 
@@ -296,7 +300,7 @@
 
                                                 <div class="col-sm-8">
                                                     <input type="text" class="form-control" id="apellidop_contacto"
-                                                        placeholder="Guzmán" required>
+                                                        name="apellidop_contacto" placeholder="Guzmán" required>
                                                 </div>
                                             </div>
 
@@ -306,7 +310,7 @@
 
                                                 <div class="col-sm-8">
                                                     <input type="text" class="form-control" id="apellidom_contacto"
-                                                        placeholder="Lupercio" required>
+                                                        name="apellidom_contacto" placeholder="Lupercio" required>
                                                 </div>
                                             </div>
 
@@ -314,7 +318,8 @@
                                                 <label for="parentesco"
                                                     class="col-sm-4 control-label">Parentesco</label>
                                                 <div class="col-sm-8">
-                                                    <select class="form-control" required>
+                                                    <select class="form-control" id="parentesco" name="parentesco"
+                                                        required>
                                                         <option value="">-- Elige una opción --</option>
                                                         <option>Padre/madre</option>
                                                         <option>Hermano/a</option>
@@ -329,8 +334,9 @@
                                                 <label for="tel_contacto"
                                                     class="col-sm-4 control-label">Teléfono</label>
                                                 <div class="col-sm-8">
-                                                    <input type="tel" required class="form-control tel_mask" id="tel_contacto"
-                                                        data-inputmask="'mask': '(999) 999-9999'" data-mask>
+                                                    <input type="tel" class="form-control tel_mask" id="tel_contacto"
+                                                        name="tel_contacto" data-inputmask="'mask': '(999) 999-9999'"
+                                                        data-mask required>
                                                 </div>
                                             </div>
 
@@ -338,7 +344,7 @@
                                                 <label for="email_contacto" class="col-sm-4 control-label">Email</label>
                                                 <div class="col-sm-8">
                                                     <input type="email" class="form-control" id="email_contacto"
-                                                        placeholder="jjesus_lupercio@gmail.com">
+                                                        name="email_contacto" placeholder="jjesus_lupercio@gmail.com">
                                                 </div>
                                             </div>
 
