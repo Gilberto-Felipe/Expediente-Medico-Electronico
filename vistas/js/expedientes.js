@@ -1,16 +1,23 @@
 /*=============================================
-=            Sidebar menu           =
+CARGAR LA TABLA DINÁMICA DE CLIENTES
 =============================================*/
-
-$('.sidebar-menu').tree();
-
+/* COMPRUEBA CONEXIÓN CON datatable-clientes.ajax.php
+$.ajax({
+	url: 'ajax/datatable-expedientes.ajax.php',
+	success: function (respuesta){
+		console.log(respuesta);		
+	}
+});*
 
 /*=============================================
-=            Data Table           =
+CONFIGURANDO DATATABLE
 =============================================*/
+$('.tablaExpedientes').DataTable( {
 
-$(".tablas").DataTable({
-
+    "ajax": "ajax/datatable-expedientes.ajax.php",
+    "deferRender": true,
+	"retrieve": true,
+	"processing": true,
 	"language": {
 
 		"sProcessing":     "Procesando...",
@@ -35,38 +42,7 @@ $(".tablas").DataTable({
 			"sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
 			"sSortDescending": ": Activar para ordenar la columna de manera descendente"
 		}
-
+		
 	}
-
+    
 });
-
-
-/*=============================================
-INPUT-MASKS
-=============================================*/
-//Datemask dd/mm/yyyy
-$('.fechas').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' });
-//Telephone US mask
-$('.tel_mask').inputmask(); 
-
-/*=============================================
-iCHECK FOR CHECKBOX & RADIO-BUTTONS
-=============================================*/
-$('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
-
-	checkboxClass: 'icheckbox_minimal-blue',
-	radioClass   : 'iradio_minimal-blue'
-	
-});
-
-
-/*=============================================
-Initialize all tooltips
-=============================================*/
-$(document).ready(function(){
-	$('[data-toggle="tooltip"]').tooltip();
-});
-
-
-
-

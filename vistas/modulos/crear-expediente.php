@@ -85,7 +85,7 @@
                                                 <label for="fecha_nacimiento" class="col-sm-4 control-label">Fecha
                                                     nacimiento</label>
                                                 <div class="col-sm-8">
-                                                    <input type="text" required class="form-control"
+                                                    <input type="text" id="fecha_nacimiento" required class="form-control fechas"
                                                         data-inputmask="'alias': 'dd/mm/yyyy'" data-mask>
                                                 </div>
                                             </div><!-- /.form-group -->
@@ -136,8 +136,7 @@
                                                 <label for="tel_paciente"
                                                     class="col-sm-4 control-label">Teléfono</label>
                                                 <div class="col-sm-8">
-                                                    <input type="tel" required class="form-control" id="tel_paciente"
-                                                        placeholder="(999) 999-9999"
+                                                    <input type="tel" required class="form-control tel_mask" id="tel_paciente"
                                                         data-inputmask="'mask': '(999) 999-9999'" data-mask>
                                                 </div>
                                             </div>
@@ -261,7 +260,7 @@
                                                 <label for="fecha_vencimiento" class="col-sm-4 control-label">Fecha
                                                     vencimiento</label>
                                                 <div class="col-sm-8">
-                                                    <input type="text" id="fecha_vencimiento" class="form-control"
+                                                    <input type="text" id="fecha_vencimiento" class="form-control fechas"
                                                         required data-inputmask="'alias': 'dd/mm/yyyy'" data-mask>
                                                 </div>
                                             </div><!-- /.form-group -->
@@ -330,8 +329,7 @@
                                                 <label for="tel_contacto"
                                                     class="col-sm-4 control-label">Teléfono</label>
                                                 <div class="col-sm-8">
-                                                    <input type="tel" required class="form-control" id="tel_contacto"
-                                                        placeholder="(999) 999-9999"
+                                                    <input type="tel" required class="form-control tel_mask" id="tel_contacto"
                                                         data-inputmask="'mask': '(999) 999-9999'" data-mask>
                                                 </div>
                                             </div>
