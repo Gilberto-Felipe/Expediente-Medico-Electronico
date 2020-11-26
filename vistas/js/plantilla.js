@@ -53,10 +53,14 @@ $('.tel_mask').inputmask();
 /*=============================================
 Initialize all tooltips
 =============================================*/
-$(document).ready(function(){
-	$('[data-toggle="tooltip"]').tooltip();
-});
+$('[data-toggle="tooltip"]').tooltip();
 
 
+/*=============================================
+Initialize all tooltips
+=============================================*/
+function limpiar_formulario() {
+	document.getElementById("crear_expediente").reset();
+}
 
 

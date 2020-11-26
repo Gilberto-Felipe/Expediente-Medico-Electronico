@@ -25,7 +25,7 @@
 
       <div class="box-header with-border">
 
-        <a class="btn btn-success btn-lg" href="crear-expediente">Crear Expediente</a>
+        <a class="btn btn-success" href="crear-expediente">Crear Expediente</a>
 
       </div>
 
