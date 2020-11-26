@@ -5,7 +5,7 @@
 
     <h1>
 
-      Administrar Expedientes
+      Ver expediente
 
     </h1>
 
@@ -13,7 +13,7 @@
 
       <li><a href="inicio"><i class="fa fa-dashboard"></i>ECE</a></li>
 
-      <li class="active">Administrar expedientes</li>
+      <li class="active">Ver expediente</li>
 
     </ol>
 

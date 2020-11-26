@@ -53,7 +53,8 @@ Probando campos de fechas y teléfonos
 =============================================*/
 $('.fechas').on('change', function() { 
     console.log(this.value); 
-})
+});
 $('.tel_mask').on('change', function() { 
     console.log(this.value); 
-})
+});
+

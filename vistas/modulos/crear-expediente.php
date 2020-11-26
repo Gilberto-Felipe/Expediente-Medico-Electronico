@@ -12,9 +12,9 @@
 
         <ol class="breadcrumb">
 
-            <li><a href="inicio"><i class="fa fa-dashboard"></i> Inicio</a></li>
+            <li><a href="inicio"><i class="fa fa-dashboard"></i>ECE</a></li>
 
-            <li class="active">Inicio</li>
+            <li class="active">Crear expediente</li>
 
         </ol>
     </section><!-- /.section content-header-->

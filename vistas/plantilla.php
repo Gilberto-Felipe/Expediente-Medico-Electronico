@@ -120,11 +120,9 @@
         if($_GET["ruta"] == "inicio" ||
           $_GET["ruta"] == "expedientes" ||
           $_GET["ruta"] == "crear-expediente" ||
-          $_GET["ruta"] == "consultas" ||
+          $_GET["ruta"] == "ver-expediente" ||
           $_GET["ruta"] == "estudios" ||
-          $_GET["ruta"] == "ventas" ||
-          $_GET["ruta"] == "crear-venta" ||
-          $_GET["ruta"] == "reportes" ||
+          $_GET["ruta"] == "consultas" ||
           $_GET["ruta"] == "salir"){
 
           include "modulos/".$_GET["ruta"].".php";
