@@ -58,3 +58,55 @@ $('.tel_mask').on('change', function() {
     console.log(this.value); 
 });
 
+
+/*=============================================
+MANDAR ID_PACIENTE POR AJAX A ver-expediente.php
+
+$(".tablaExpedientes").on("click", ".btnVerExpediente", function(){
+
+    let idExpediente = $(this).attr("idExpediente");
+	console.log("TCL: idExpediente", idExpediente);
+
+	if (idExpediente) {
+		window.location = "ver-expediente?idExpediente="+idExpediente;
+	}
+	
+	let datos = new FormData();
+	datos.append('idExpediente', idExpediente);
+    
+	$.ajax({
+		url: 'vistas/modulos/ver-expediente.php',
+		method: 'POST',
+		data: datos,
+		cache: false, 
+		contentType: false,
+		processData: false,
+		dataType: 'json',
+		success: function(respuesta){
+
+			console.log("TCL: respuesta OK ", respuesta);
+			window.location = 'ver-expediente';
+			//$(".id_paciente").val(respuesta["id_paciente"]);
+			console.log("HOLA SOY ",respuesta);
+			
+		}
+
+	});
+    
+});
+=============================================*/
+
+
+/*=============================================
+MANDAR ID_PACIENTE POR AJAX A ver-expediente.php
+=============================================*/
+$(".tablaExpedientes").on("click", ".btnVerExpediente", function(){
+
+    let idExpediente = $(this).attr("idExpediente");
+	console.log("TCL: idExpediente", idExpediente);
+
+	if (idExpediente) {
+		window.location = "index.php?ruta=ver-expediente&idExpediente="+idExpediente;
+	}
+
+});

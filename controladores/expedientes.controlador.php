@@ -135,7 +135,7 @@ class ControladorExpedientes {
 					);
 
 					$respuesta3 = ModeloExpedientes::mdlRegistrarContacto($tabla3, $datos3);
-					var_dump($respuesta3);
+					//var_dump($respuesta3);
 
 					echo '<script>
 						swal({

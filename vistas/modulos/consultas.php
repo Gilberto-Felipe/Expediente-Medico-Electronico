@@ -5,48 +5,55 @@
 
     <h1>
 
-      Administrar categorías
+      Administrar Consultas
 
     </h1>
 
     <ol class="breadcrumb">
 
-      <li><a href="inicio"><i class="fa fa-dashboard"></i> Inicio</a></li>
+      <li><a href="inicio"><i class="fa fa-dashboard"></i>ECE</a></li>
 
-      <li class="active">Administrar categorías</li>
+      <li class="active">Administrar consultas</li>
 
     </ol>
 
   </section>
 
-  <!-- Main content -->
   <section class="content">
 
-    <!-- Default box -->
     <div class="box">
+
       <div class="box-header with-border">
-        <h3 class="box-title">Title</h3>
 
-        <div class="box-tools pull-right">
-          <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
-                  title="Collapse">
-            <i class="fa fa-minus"></i></button>
-          <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
-            <i class="fa fa-times"></i></button>
-        </div>
+        <a class="btn btn-success" href="crear-expediente">Crear consulta</a>
+
       </div>
+
       <div class="box-body">
-        Start creating your amazing application!
-      </div>
-      <!-- /.box-body -->
-      <div class="box-footer">
-        Footer
-      </div>
-      <!-- /.box-footer-->
-    </div>
-    <!-- /.box -->
 
-  </section>
-  <!-- /.content -->
-</div>
-<!-- /.content-wrapper -->
+        <table class="table table-bordered table-striped dt-responsive tablaExpedientes" width="100%">
+
+          <thead> 
+
+            <tr>
+                
+              <th>#</th>
+              <th>Nombre</th>
+              <th>Fecha nacimiento</th>
+              <th style="width: 10px">Ver</th>
+              <th style="width: 10px">Modificar</th>
+
+            </tr>
+
+          </thead>
+            
+        </table>
+
+      </div>
+
+    </div><!-- /.box -->
+
+  </section><!-- /.content -->
+
+</div><!-- /.content-wrapper -->
+
