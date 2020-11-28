@@ -95,7 +95,6 @@ class ControladorExpedientes {
 				);
 
 
-
 				// var_dump($datos);
 				// COMPROBAR QUE SE HAYA HECHO EL REGISTRO
 				$respuesta = ModeloExpedientes::mdlCrearExpediente($tabla, $datos);

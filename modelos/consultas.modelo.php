@@ -10,19 +10,6 @@ class ModeloConsultas {
     static public function mdlMostrarConsultas($tabla, $item, $valor){
 
         if ($item != null) {
-
-/*SELECT 
-	c.id_consulta as 'id_consulta',
-	c.paciente_id_paciente as 'id_paciente',
-	concat(p.nombre_paciente,' ', p.apellido_p,' ', p.apellido_m) as 'nombre_paciente',
-	p.fecha_nacimiento as 'fecha_nacimiento',
-	concat(d.nombre_doctor,' ',d.apellidop_doctor,' ',d.apellidom_doctor) as 'nombre_doctor',
-	c.fecha_consulta as 'fecha_consulta'
-FROM consulta as c 
-join paciente as p ON c.paciente_id_paciente = p.id_paciente
-join doctor as d on c.doctor_id_doctor = d.id_doctor
-WHERE c.id_consulta = 1 */
-
 			
 			# "SELECT * from $tabla WHERE $item = :$item"
 			$stmt = Conexion::conectar()->prepare(
@@ -31,6 +18,7 @@ WHERE c.id_consulta = 1 */
 					c.paciente_id_paciente as 'id_paciente',
 					concat(p.nombre_paciente,' ', p.apellido_p,' ', p.apellido_m) as 'nombre_paciente',
 					p.fecha_nacimiento as 'fecha_nacimiento',
+					c.doctor_id_doctor as 'id_doctor',
 					concat(d.nombre_doctor,' ',d.apellidop_doctor,' ',d.apellidom_doctor) as 'nombre_doctor',
 					c.fecha_consulta as 'fecha_consulta'
 				FROM $tabla as c 
@@ -79,27 +67,26 @@ WHERE c.id_consulta = 1 */
 	=============================================*/
 	static public function mdlCrearConsulta($tabla, $datos){
 
-		$stmt = Conexion::conectar()->prepare(
-			"INSERT INTO $tabla(nombre_paciente, apellido_p, apellido_m, fecha_nacimiento, sexo, 
-				estado_civil, email, telefono, tipo_sangre, alergias, 
-				antecedentes_medicos, antecedentes_familiares, domicilio, fecha_creacion) 
-			VALUES (:nombre, :apellidop, :apellidom, :fecha_n, :sexo,
-				:edo_civil, :email, :tel, :tipo_sangre, :alergias,
-				:antecedentes_m, :antecedentes_f, :domicilio, now())");
+		/*$datos = array(
+			'paciente_id_paciente' => $_POST['id_paciente'],
+			'doctor_id_doctor' => $_POST['id_doctor'],
+			'diagnostico' => $_POST['diagnostico'],
+			'receta_medica' => $_POST['receta'],
+			'fecha_consulta' => $fechaConsulta,
+			//'estudios_true' => $_POST['edo_civil']			
+		);*/
 
-		$stmt->bindParam(":nombre", $datos["nombre_paciente"], PDO::PARAM_STR);
-		$stmt->bindParam(":apellidop", $datos["apellido_p"], PDO::PARAM_STR);
-		$stmt->bindParam(":apellidom", $datos["apellido_m"], PDO::PARAM_STR);
-		$stmt->bindParam(":fecha_n", $datos["fecha_nacimiento"], PDO::PARAM_STR);
-		$stmt->bindParam(":sexo", $datos["sexo"], PDO::PARAM_INT);
-		$stmt->bindParam(":edo_civil", $datos["estado_civil"], PDO::PARAM_INT);
-		$stmt->bindParam(":email", $datos["email"], PDO::PARAM_STR);
-		$stmt->bindParam(":tel", $datos["telefono"], PDO::PARAM_STR);
-		$stmt->bindParam(":tipo_sangre", $datos["tipo_sangre"], PDO::PARAM_INT);
-		$stmt->bindParam(":alergias", $datos["alergias"], PDO::PARAM_STR);
-		$stmt->bindParam(":antecedentes_m", $datos["antecedentes_medicos"], PDO::PARAM_STR);
-		$stmt->bindParam(":antecedentes_f", $datos["antecedentes_familiares"], PDO::PARAM_STR);
-		$stmt->bindParam(":domicilio", $datos["domicilio"], PDO::PARAM_STR);
+		$stmt = Conexion::conectar()->prepare(
+			"INSERT INTO $tabla(
+				paciente_id_paciente, doctor_id_doctor, diagnostico, receta_medica, fecha_consulta) 
+			VALUES (
+				:id_paciente, :id_doctor, :diagnostico, :receta, :fechaConsulta)");
+
+		$stmt->bindParam(":id_paciente", $datos["paciente_id_paciente"], PDO::PARAM_STR);
+		$stmt->bindParam(":id_doctor", $datos["doctor_id_doctor"], PDO::PARAM_STR);
+		$stmt->bindParam(":diagnostico", $datos["diagnostico"], PDO::PARAM_STR);
+		$stmt->bindParam(":receta", $datos["receta_medica"], PDO::PARAM_STR);
+		$stmt->bindParam(":fechaConsulta", $datos["fecha_consulta"], PDO::PARAM_STR);
 
 		if($stmt->execute()) {
 

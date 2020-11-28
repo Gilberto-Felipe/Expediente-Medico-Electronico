@@ -4,7 +4,7 @@
 
         // Recibir idConsulta
         $idConsulta = $_GET['idConsulta'];
-        echo "HOLAAAAAAAAAAAAAAAAAAAA ".$idConsulta;
+        // echo "HOLAAAAAAAAAAAAAAAAAAAA ".$idConsulta;
 
         $item = "id_consulta";
         $valor = $idConsulta;
@@ -12,11 +12,12 @@
 
         // Pedir datos al controlador
         $consulta = ControladorConsultas::ctrMostrarConsultas($item, $valor);
-        var_dump($consulta);
+        //var_dump($consulta);
 
         $idExpediente = $consulta['id_paciente'];
         $nombre_paciente = $consulta['nombre_paciente'];
         $fecha_nacimiento = $consulta['fecha_nacimiento'];
+        $idDoctor = $consulta['id_doctor'];
         $nombre_doctor = $consulta['nombre_doctor'];
         $fecha_consulta = $consulta['fecha_consulta'];
 
@@ -30,7 +31,7 @@
         // $fecha_nacimiento = date('d-m-Y', strtotime($paciente["fecha_nacimiento"]));
         //$fecha_consulta = date('d-m-Y', strtotime($consulta['fecha_consulta']));
         date_default_timezone_set("America/Mexico_City");
-        $fecha_actual = date("d-m-Y h:i:sa");
+        $fecha_actual = date("d-m-Y H:i:s");
 
     }
     else {
@@ -82,18 +83,18 @@
             <form role="form" method="post" id="crear-consulta" enctype="multipart/form-data">
                 <div class="box-body" style="padding:1rem 5rem;">
 
-                    <input type="hidden" id="id_consulta" name="id_consulta">
-                    <input type="hidden" id="id_paciente" name="id_paciente">
-                    <input type="hidden" id="id_doctor" name="id_doctor">
+                    <input type="hidden" id="id_consulta" name="id_consulta" value="<?php echo $idConsulta;?>">
+                    <input type="hidden" id="id_paciente" name="id_paciente" value="<?php echo $idExpediente;?>">
+                    <input type="hidden" id="id_doctor" name="id_doctor" value="<?php echo $idDoctor;?>">
 
                     <p class=""><strong>Edad: </strong><?php echo $edad;?></p>
 
                     <p class=""><strong>Fecha consulta:</strong> <?php echo $fecha_actual;?></p>
-                    <input type="hidden" id="fecha_consulta" name="fecha_consulta">
+                    <input type="hidden" id="fecha_consulta" name="fecha_consulta" value="<?php echo $fecha_actual;?>">
 
                     <div class="form-group" style="padding:0rem 0rem;">
-                        <label for="diagnóstico" class="control-label">Diagnóstico</label>
-                        <textarea class="form-control" id="diagnóstico" name="diagnóstico" rows="3" cols="80"
+                        <label for="diagnostico" class="control-label">Diagnóstico</label>
+                        <textarea class="form-control" id="diagnostico" name="diagnostico" rows="3" cols="80"
                             style="resize:none;" placeholder="Escribe..." spellcheck="false"></textarea>
                     </div>
 
@@ -102,18 +103,24 @@
                         <textarea class="form-control" id="receta" name="receta" rows="3" cols="80" style="resize:none;"
                             placeholder="Escribe..." spellcheck="false"></textarea>
                     </div>
-
-                    <!-- ENTRADA PARA SUBIR ESTUDIO -->
-                    <div class="form-group" style="padding:0rem 0rem;">
-                        <div class="panel">SUBIR ESTUDIO</div>
-                        <input type="file" class="nuevoEstudio" name="nuevoEstudio">
-                        <p class="help-block">Peso máximo del archivo 2MB</p>
+                    
+                    <!-- checkbox para saber si hay estudio o no
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" id="hay_estudio" name="hay_estudio" value="0">Hay Estudios para subir
+                        </label>
                     </div>
+                    -->
+
+                    <!-- BOTÓN AGREGAR ESTUDIO -->
+                    <a class="btn btn-primary" href="crear-estudio">Agregar Estudio</a>
                 </div><!-- /.box-body-->
 
-                <div class="box-footer">
-                    <button type="submit" id="btnGuardarConsulta" class="btn btn-success btn-lg">Guardar consulta</button>
-                    <button type="button" class="btn btn-normal" id="btnLimpiar" style="margin-left:2rem;">Limpiar formulario</button>
+                <div class="box-footer" style="padding:1rem 5rem;">
+                    <button type="submit" id="btnGuardarConsulta" class="btn btn-success btn-lg">Guardar
+                        consulta</button>
+                    <button type="button" class="btn btn-normal" id="btnLimpiar" style="margin-left:2rem;">Limpiar
+                        formulario</button>
                 </div><!-- /.box-footer-->
             </form>
         </div><!-- /.box -->

@@ -112,14 +112,31 @@ $(".tablaConsultas").on("click", ".btnAgregarConsulta", function(){
 
 });
 
+// probar inputs...
+$("#crear-consulta").on("click", "#btnGuardarConsulta", function(){
 
-$(".tablaConsultas").on("click", ".btnAgregarConsulta", function(){
+    let idConsulta = $("#id_consulta").val();
+	console.log("TCL: idConsulta", idConsulta); 
 
-    let idConsulta = $(this).attr("idConsulta");
-	console.log("TCL: idConsulta", idConsulta);
+	let idPaciente = $("#id_paciente").val();
+	console.log("TCL: idPaciente", idPaciente);
 
-	if (idConsulta) {
-		window.location = "index.php?ruta=crear-consulta&idConsulta="+idConsulta;
-	}
+	let idDoctor = $("#id_doctor").val();
+	console.log("TCL: idDoctor", idDoctor);
+
+	let fechActual = $("#fecha_consulta").val();
+	console.log("TCL: fechActual", fechActual);
+
+	let diagnostico = $("#diagnostico").val();
+	console.log("TCL: diagnostico", diagnostico);
+
+	let receta = $("#receta").val();
+	console.log("TCL: receta", receta);
+
+	let nuevoEstudio = $("#nuevoEstudio").val();
+	console.log("TCL: nuevoEstudio", nuevoEstudio);
 
 });
+
+
+
