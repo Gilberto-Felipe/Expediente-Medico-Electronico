@@ -9,33 +9,37 @@ class ModeloConsultas {
 	=============================================*/
     static public function mdlMostrarConsultas($tabla, $item, $valor){
 
-		/*SELECT 
-			c.*
-		FROM consulta as c 
-		join paciente as p
-		ON c.paciente_id_paciente = p.id_paciente
-		join doctor as d
-		on c.doctor_id_doctor = d.id_doctor
-		order by c.id_consulta;
-		
-		SELECT 
-			c.id_consulta,
-			c.paciente_id_paciente,
-			concat(p.nombre_paciente," ",p.apellido_p," ",p.apellido_m),
-			concat(d.nombre_doctor," ",d.apellidop_doctor," ",d.apellidom_doctor),
-			c.fecha_consulta
-		FROM consulta as c 
-		join paciente as p
-		ON c.paciente_id_paciente = p.id_paciente
-		join doctor as d
-		on c.doctor_id_doctor = d.id_doctor
-		order by c.id_consulta;*/
-
         if ($item != null) {
-			
-			$stmt = Conexion::conectar()->prepare("SELECT * from $tabla WHERE $item = :$item");
 
-			$stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
+/*SELECT 
+	c.id_consulta as 'id_consulta',
+	c.paciente_id_paciente as 'id_paciente',
+	concat(p.nombre_paciente,' ', p.apellido_p,' ', p.apellido_m) as 'nombre_paciente',
+	p.fecha_nacimiento as 'fecha_nacimiento',
+	concat(d.nombre_doctor,' ',d.apellidop_doctor,' ',d.apellidom_doctor) as 'nombre_doctor',
+	c.fecha_consulta as 'fecha_consulta'
+FROM consulta as c 
+join paciente as p ON c.paciente_id_paciente = p.id_paciente
+join doctor as d on c.doctor_id_doctor = d.id_doctor
+WHERE c.id_consulta = 1 */
+
+			
+			# "SELECT * from $tabla WHERE $item = :$item"
+			$stmt = Conexion::conectar()->prepare(
+				"SELECT 
+					c.id_consulta as 'id_consulta',
+					c.paciente_id_paciente as 'id_paciente',
+					concat(p.nombre_paciente,' ', p.apellido_p,' ', p.apellido_m) as 'nombre_paciente',
+					p.fecha_nacimiento as 'fecha_nacimiento',
+					concat(d.nombre_doctor,' ',d.apellidop_doctor,' ',d.apellidom_doctor) as 'nombre_doctor',
+					c.fecha_consulta as 'fecha_consulta'
+				FROM $tabla as c 
+				join paciente as p ON c.paciente_id_paciente = p.id_paciente
+				join doctor as d on c.doctor_id_doctor = d.id_doctor
+				WHERE $item = :$item"
+			);
+
+			$stmt -> bindParam(":".$item, $valor, PDO::PARAM_INT);
 
 			$stmt -> execute();
 
@@ -47,12 +51,13 @@ class ModeloConsultas {
 
 			$stmt = Conexion::conectar()->prepare(
 				"SELECT 
-					c.id_consulta as 'id_consulta' ,
+					c.id_consulta as 'id_consulta',
 					c.paciente_id_paciente as 'id_paciente',
 					concat(p.nombre_paciente,' ', p.apellido_p,' ', p.apellido_m) as 'nombre_paciente',
+					p.fecha_nacimiento as 'fecha_nacimiento',
 					concat(d.nombre_doctor,' ',d.apellidop_doctor,' ',d.apellidom_doctor) as 'nombre_doctor',
 					c.fecha_consulta as 'fecha_consulta'
-				FROM consulta as c 
+				FROM $tabla as c 
 				join paciente as p ON c.paciente_id_paciente = p.id_paciente
 				join doctor as d on c.doctor_id_doctor = d.id_doctor
 				order by c.id_consulta"

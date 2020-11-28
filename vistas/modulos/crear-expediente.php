@@ -40,7 +40,7 @@
 
                 <form role="form" method="post" id="crear_expediente">
                     <!-- box-body -->
-                    <div style="padding:2rem 0rem;">
+                    <div class="box-body" style="padding:2rem 0rem;">
                         
                             <div class="row">
                                 <!-- .col (left) -->
@@ -367,7 +367,7 @@
     $crearExpediente -> ctrCrearExpediente();
 
 ?>
-            </div>
-        </div><!-- /.box -->
+            </div> <!-- /.box -->
+        </div><!-- /.box-header -->
     </section><!-- /.content -->
 </div><!-- /.content-wrapper -->

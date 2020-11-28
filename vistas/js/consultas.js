@@ -105,9 +105,9 @@ $(".tablaConsultas").on("click", ".btnAgregarConsulta", function(){
 
     let idConsulta = $(this).attr("idConsulta");
 	console.log("TCL: idConsulta", idConsulta);
-/*
+
 	if (idConsulta) {
-		window.location = "index.php?ruta=ver-consulta&idConsulta="+idConsulta;
+		window.location = "index.php?ruta=crear-consulta&idConsulta="+idConsulta;
 	}
-*/
+
 });

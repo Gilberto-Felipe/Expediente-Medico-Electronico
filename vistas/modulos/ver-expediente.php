@@ -1,12 +1,16 @@
 <?php
 
     if (isset($_GET['idExpediente'])) {
+
+        // Recibir idExpediente
         $idExpediente = $_GET['idExpediente'];
 
         $item = "id_paciente";
         $valor = $idExpediente;
 
+        // Pedir datos al controlador
         $paciente = ControladorExpedientes::ctrMostrarExpedientes($item, $valor);
+        
         $nombre_completo = $paciente["nombre_paciente"]." ".$paciente["apellido_p"]." ".$paciente["apellido_m"];
         $tipo_sangre = $paciente["tipo_sangre"];
         $alergias = $paciente["alergias"]; 
@@ -58,7 +62,7 @@
 
     }
     else {
-        echo "EEEEEEEEEERRRRRRRRRRRRRRRROOOOORRRRRRRRRRR";
+        echo "¡Hubo un error! Comunícate con el personal de sistemas.";
     }
 
 ?>
@@ -90,15 +94,21 @@
 
             <div class="box-header with-border" style="padding:0 3rem;">
 
-                <h4 class="text-right" id="rec_idPaciente">Exp-<?php echo $idExpediente;?>
-                </h4>
-                <h3 class="title" name="nombre_paciente">
-                    <?php echo $nombre_completo;?>
-                </h3>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3 class="title" name="nombre_paciente">
+                            <?php echo $nombre_completo;?>
+                        </h3>
+                    </div>
+                    <div class="col-md-6">
+                        <h3 class="text-right" id="rec_idPaciente">Exp-<?php echo $idExpediente;?>
+                        </h3>
+                    </div>
+                </div>
 
             </div>
 
-            <div class="box-body" style="padding:2rem 3rem;">
+            <div class="box-body" style="padding:1rem 3rem;">
 
                 <div class="row">
                     <div class="col-sm-9">

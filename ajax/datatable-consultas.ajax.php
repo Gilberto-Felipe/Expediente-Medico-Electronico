@@ -59,7 +59,7 @@ class TablaConsultas{
 
 
 /*=============================================
-ACTIVAR TABLA EXPEDIENTES
+ACTIVAR TABLA CONSULTAS
 =============================================*/
-$activarExpedientes = new TablaConsultas();
-$activarExpedientes -> mostrarTablaConsultas();
+$activarConsultas = new TablaConsultas();
+$activarConsultas -> mostrarTablaConsultas();

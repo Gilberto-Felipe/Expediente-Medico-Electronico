@@ -25,7 +25,7 @@
 
       <div class="box-header with-border">
 
-        <a class="btn btn-success" href="crear-consulta">Crear consulta</a>
+        <h4>Aquí puedes buscar y agregar consultas</h4>
 
       </div>
 
