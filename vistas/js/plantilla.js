@@ -57,10 +57,18 @@ $('[data-toggle="tooltip"]').tooltip();
 
 
 /*=============================================
-Initialize all tooltips
+Limpiar formulario
 =============================================*/
-function limpiar_formulario() {
-	document.getElementById("crear_expediente").reset();
-}
+$("#btnLimpiar").click(function(event) {
+	let idFormulario = $("form").attr("id");
+	//console.log(idFormulario);
+
+	$(`#${idFormulario}`)[0].reset();
+});
+
+
+/*function limpiar_formulario() {
+	document.getElementByID("limipiarFormulario").reset();
+}*/
 
 

@@ -38,7 +38,7 @@
                 </div>
             -->
 
-                <form role="form" method="post" id="crear_expediente">
+                <form role="form" method="post" id="crear-expediente">
                     <!-- box-body -->
                     <div class="box-body" style="padding:2rem 0rem;">
                         
@@ -356,8 +356,7 @@
 
                     <div class="box-footer">
                         <button type="submit" class="btn btn-success btn-lg">Crear expediente</button>
-                        <input type="button" onclick="limpiar_formulario()" value="Limpiar formulario"
-                        class="btn btn-normal" style="margin-left:2rem;"></input>
+                        <button type="button" class="btn btn-normal" id="btnLimpiar" style="margin-left:2rem;">Limpiar formulario</button>
                     </div><!-- /.box-footer-->
                 </form>
 

@@ -98,7 +98,7 @@ $(".tablaExpedientes").on("click", ".btnVerExpediente", function(){
 
 
 /*=============================================
-MANDAR ID_PACIENTE POR AJAX A ver-expediente.php
+MANDAR POR GET ID_PACIENTE A ver-expediente.php
 =============================================*/
 $(".tablaExpedientes").on("click", ".btnVerExpediente", function(){
 

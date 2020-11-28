@@ -45,7 +45,7 @@
 
         <h1>
 
-            Crear Consulta
+            Registrar Consulta
 
             <small></small>
 
@@ -55,7 +55,7 @@
 
             <li><a href="inicio"><i class="fa fa-dashboard"></i>ECE</a></li>
 
-            <li class="active">Crear consulta</li>
+            <li class="active">Registrar consulta</li>
 
         </ol>
     </section><!-- /.section content-header-->
@@ -79,34 +79,41 @@
                 </div><!-- /.row -->
             </div><!-- /.box-header-->
 
-            <form role="form" method="post" id="crear_expediente">
+            <form role="form" method="post" id="crear-consulta" enctype="multipart/form-data">
                 <div class="box-body" style="padding:1rem 5rem;">
 
                     <input type="hidden" id="id_consulta" name="id_consulta">
                     <input type="hidden" id="id_paciente" name="id_paciente">
                     <input type="hidden" id="id_doctor" name="id_doctor">
-                    
 
-                    <p class="">Edad: <?php echo $edad;?></p>
+                    <p class=""><strong>Edad: </strong><?php echo $edad;?></p>
 
-                    <p class="">Fecha consulta: <?php echo $fecha_actual;?></p>
+                    <p class=""><strong>Fecha consulta:</strong> <?php echo $fecha_actual;?></p>
                     <input type="hidden" id="fecha_consulta" name="fecha_consulta">
 
-                    <label for="diagnóstico" class="control-label">Diagnóstico</label>
-                    <textarea class="form-control" id="diagnóstico" name="diagnóstico" rows="3" cols="80"
-                        style="resize:none;" placeholder="Escribe..." spellcheck="false"></textarea>
+                    <div class="form-group" style="padding:0rem 0rem;">
+                        <label for="diagnóstico" class="control-label">Diagnóstico</label>
+                        <textarea class="form-control" id="diagnóstico" name="diagnóstico" rows="3" cols="80"
+                            style="resize:none;" placeholder="Escribe..." spellcheck="false"></textarea>
+                    </div>
 
-                    <label for="receta" class="control-label">Receta</label>
-                    <textarea class="form-control" id="receta" name="receta" rows="3" cols="80" style="resize:none;"
-                        placeholder="Escribe..." spellcheck="false"></textarea>
+                    <div class="form-group" style="padding:0rem 0rem;">
+                        <label for="receta" class="control-label">Receta</label>
+                        <textarea class="form-control" id="receta" name="receta" rows="3" cols="80" style="resize:none;"
+                            placeholder="Escribe..." spellcheck="false"></textarea>
+                    </div>
 
-                    
+                    <!-- ENTRADA PARA SUBIR ESTUDIO -->
+                    <div class="form-group" style="padding:0rem 0rem;">
+                        <div class="panel">SUBIR ESTUDIO</div>
+                        <input type="file" class="nuevoEstudio" name="nuevoEstudio">
+                        <p class="help-block">Peso máximo del archivo 2MB</p>
+                    </div>
                 </div><!-- /.box-body-->
 
                 <div class="box-footer">
-                    <button type="submit" class="btn btn-success btn-lg">Crear expediente</button>
-                    <input type="button" onclick="limpiar_formulario()" value="Limpiar formulario"
-                        class="btn btn-normal" style="margin-left:2rem;"></input>
+                    <button type="submit" id="btnGuardarConsulta" class="btn btn-success btn-lg">Guardar consulta</button>
+                    <button type="button" class="btn btn-normal" id="btnLimpiar" style="margin-left:2rem;">Limpiar formulario</button>
                 </div><!-- /.box-footer-->
             </form>
         </div><!-- /.box -->
