@@ -122,6 +122,7 @@
           $_GET["ruta"] == "crear-expediente" ||
           $_GET["ruta"] == "ver-expediente" ||
           $_GET["ruta"] == "consultas" ||
+          $_GET["ruta"] == "crear-consulta" ||
           $_GET["ruta"] == "estudios" ||
           $_GET["ruta"] == "salir"){
 
@@ -159,6 +160,7 @@
     <!-- enlaces a js -->
     <script src="vistas/js/plantilla.js"></script>
     <script src="vistas/js/expedientes.js"></script>
+    <script src="vistas/js/consultas.js"></script>
 
 </body>
 

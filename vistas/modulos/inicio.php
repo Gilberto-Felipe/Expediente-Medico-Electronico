@@ -53,7 +53,7 @@
           </div>
 
           <div class="col-sm-6 col-md-4">          
-            <a href="#" class="thumbnail btn btn-warning" role="button" style="width:22rem; height:18rem; border-radius:10px;">
+            <a href="consultas" class="thumbnail btn btn-warning" role="button" style="width:22rem; height:18rem; border-radius:10px;">
               <div class="text-center">
                 <i class="fa fa-stethoscope" style="font-size:8rem; padding-top:2rem; color:black;" aria-hidden="true"></i>
               </div>

@@ -25,23 +25,24 @@
 
       <div class="box-header with-border">
 
-        <a class="btn btn-success" href="crear-expediente">Crear consulta</a>
+        <a class="btn btn-success" href="crear-consulta">Crear consulta</a>
 
       </div>
 
       <div class="box-body">
 
-        <table class="table table-bordered table-striped dt-responsive tablaExpedientes" width="100%">
+        <table class="table table-bordered table-striped dt-responsive tablaConsultas" width="100%">
 
           <thead> 
 
             <tr>
                 
-              <th>#</th>
-              <th>Nombre</th>
-              <th>Fecha nacimiento</th>
-              <th style="width: 10px">Ver</th>
-              <th style="width: 10px">Modificar</th>
+              <th style="width: 10px">#</th>
+              <th>Expediente</th>
+              <th>Paciente</th>
+              <th>Doctor</th>
+              <th>Fecha consulta</th>
+              <th style="width: 10px">Agregar consulta</th>
 
             </tr>
 

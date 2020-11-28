@@ -1,9 +1,9 @@
 /*=============================================
-CARGAR LA TABLA DINÁMICA DE EXPEDIENTES
+CARGAR LA TABLA DINÁMICA DE CONSULTAS
 =============================================*/
-/* COMPRUEBA CONEXIÓN CON datatable-expedientes.ajax.php
+/* COMPRUEBA CONEXIÓN CON datatable-consultas.ajax.php
 $.ajax({
-	url: 'ajax/datatable-expedientes.ajax.php',
+	url: 'ajax/datatable-consultas.ajax.php',
 	success: function (respuesta){
 		console.log(respuesta);		
 	}
@@ -12,9 +12,9 @@ $.ajax({
 /*=============================================
 CONFIGURANDO DATATABLE
 =============================================*/
-$('.tablaExpedientes').DataTable( {
+$('.tablaConsultas').DataTable( {
 
-    "ajax": "ajax/datatable-expedientes.ajax.php",
+    "ajax": "ajax/datatable-consultas.ajax.php",
     "deferRender": true,
 	"retrieve": true,
 	"processing": true,
@@ -50,13 +50,14 @@ $('.tablaExpedientes').DataTable( {
 
 /*=============================================
 Probando campos de fechas y teléfonos
-=============================================*/
+
 $('.fechas').on('change', function() { 
     console.log(this.value); 
 });
 $('.tel_mask').on('change', function() { 
     console.log(this.value); 
 });
+=============================================*/
 
 
 /*=============================================
@@ -100,13 +101,13 @@ $(".tablaExpedientes").on("click", ".btnVerExpediente", function(){
 /*=============================================
 MANDAR ID_PACIENTE POR AJAX A ver-expediente.php
 =============================================*/
-$(".tablaExpedientes").on("click", ".btnVerExpediente", function(){
+$(".tablaConsultas").on("click", ".btnAgregarConsulta", function(){
 
-    let idExpediente = $(this).attr("idExpediente");
-	console.log("TCL: idExpediente", idExpediente);
-
-	if (idExpediente) {
-		window.location = "index.php?ruta=ver-expediente&idExpediente="+idExpediente;
+    let idConsulta = $(this).attr("idConsulta");
+	console.log("TCL: idConsulta", idConsulta);
+/*
+	if (idConsulta) {
+		window.location = "index.php?ruta=ver-consulta&idConsulta="+idConsulta;
 	}
-
+*/
 });
