@@ -124,7 +124,8 @@
           $_GET["ruta"] == "consultas" ||
           $_GET["ruta"] == "crear-consulta" ||
           $_GET["ruta"] == "ver-consulta" ||
-          $_GET["ruta"] == "estudios" ||
+          $_GET["ruta"] == "crear-estudio" ||
+          $_GET["ruta"] == "ver-estudios" ||
           $_GET["ruta"] == "salir"){
 
           include "modulos/".$_GET["ruta"].".php";

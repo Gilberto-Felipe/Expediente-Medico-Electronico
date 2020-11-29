@@ -124,7 +124,7 @@
                     <div class="col-sm-3">
                         <div class="row">
                             <div class="col-sm-12">
-                                <a href="#" id="irVerExpediente" idExpediente="<?php echo $idExpediente;?>" class="thumbnail btn btn-warning" role="button"
+                                <a id="irVerExpediente" idExpediente="<?php echo $idExpediente;?>" class="thumbnail btn btn-warning" role="button"
                                     style="width:10rem; height:8rem; border-radius:10px;">
                                     <div class="text-center">
                                         <i class="fa fa-stethoscope"
@@ -137,7 +137,7 @@
                                 </a>
                             </div>
                             <div class="col-sm-12">
-                                <a href="#" class="thumbnail btn btn-info" role="button"
+                                <a id="irVerEstudios" id= class="thumbnail btn btn-info" role="button"
                                     style="width:10rem; height:8rem; border-radius:10px;">
                                     <div class="text-center">
                                         <i class="fa fa-flask" style="font-size:3rem; padding-top:1rem; color:black;"
