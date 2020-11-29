@@ -56,7 +56,7 @@
 
             <li><a href="inicio"><i class="fa fa-dashboard"></i>ECE</a></li>
 
-            <li class="active">Registrar consulta</li>
+            <li class="active">Ver consulta</li>
 
         </ol>
     </section><!-- /.section content-header-->

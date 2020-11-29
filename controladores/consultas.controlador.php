@@ -24,34 +24,24 @@ class ControladorConsultas {
         if (isset($_POST['id_consulta']) &&
             isset($_POST['id_paciente']) &&
             isset($_POST['id_doctor']) &&
-            isset($_POST['fecha_consulta']) &&
-            isset($_POST['diagnostico']) &&
-            isset($_POST['receta']) 
+            isset($_POST['fecha_consulta']) 
         ){
 
+            // SANITIZAR ENTRADAS
             if (preg_match('/^[0-9]+$/', $_POST['id_consulta']) &&
-            preg_match('/^[0-9]+$/', $_POST['id_paciente']) &&
-            preg_match('/^[0-9]+$/', $_POST['id_doctor']) &&
-            // preg_match('/^[0-9]+$/', $_POST['fecha_consulta']) &&
-            preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚüÜ ]+$/', $_POST['diagnostico']) &&
-            preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚüÜ ]+$/', $_POST['receta'])
+                preg_match('/^[0-9]+$/', $_POST['id_paciente']) &&
+                preg_match('/^[0-9]+$/', $_POST['id_doctor'])
+                //preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚüÜ ]+$/', $_POST['diagnostico']) &&
+                // preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚüÜ ]+$/', $_POST['receta'])
             ){
 
-                /* probando variables 
-                var_dump("heeeeeeeyyyyy".$_POST['id_consulta']);
-                var_dump("heeeeeeeyyyyy".$_POST['id_paciente']);
-                var_dump("heeeeeeeyyyyy".$_POST['id_doctor']);
-                var_dump("heeeeeeeyyyyy".$_POST['fecha_consulta']);
-                var_dump("heeeeeeeyyyyy".$_POST['diagnostico']);
-                var_dump("heeeeeeeyyyyy".$_POST['receta']);*/
-
+                # ##Falta sanitizar los text tarea por seguridad
 
                 // FORMATEAR FECHAS PARA ENVIAR A BD
                 $fechaConsulta = $_POST['fecha_consulta'];
                 $fechaConsulta = str_replace('/', '-', $fechaConsulta);
                 $fechaConsulta = date('Y-m-d H:i:s', strtotime($fechaConsulta));
-
-                //echo $fechaConsulta;
+                echo $fechaConsulta;
 
                 // ENVIAR DATOS AL MODELO
                 $tabla = 'consulta';
@@ -61,21 +51,20 @@ class ControladorConsultas {
                 'doctor_id_doctor' => $_POST['id_doctor'],
                 'diagnostico' => $_POST['diagnostico'],
                 'receta_medica' => $_POST['receta'],
-                'fecha_consulta' => $fechaConsulta,
+                'fecha_consulta' => $fechaConsulta
                 //'estudios_true' => $_POST['edo_civil']			
                 );
 
                 var_dump($datos);
 
-                // COMPROBAR QUE SE HAYA HECHO EL REGISTRO
-                /*$respuesta = ModeloConsultas::mdlCrearConsulta($tabla, $datos);
+                //COMPROBAR QUE SE HAYA HECHO EL REGISTRO
+                $respuesta = ModeloConsultas::mdlCrearConsulta($tabla, $datos);
                     
                 if ($respuesta == "ok") {
 
+                    var_dump($respuesta);
 
-                }*/
-
-                /*echo '<script>
+                     echo '<script>
                         swal({
                             type: "success",
                             title: "¡La consulta se registró exitosamente!",
@@ -88,29 +77,15 @@ class ControladorConsultas {
                                 window.location = "consultas";
                             }
                         });
-                    </script>';*/
+                    </script>';
+
+                }
 
             }
             else {
-                var_dump("AYUDADDDDDDDAAAAAAAAAAAA");
+                var_dump("Solicita ayuda al personal de sistemas :xd ");
             }
                        
-        }
-        else {
-            /*echo '<script>
-                     swal({
-                         type: "error",
-                         title: "¡Asegúrtate de completar los campos obligatorios!",
-                         showConfirmButton: true,
-                         confirmButtonText: "Cerrar",
-                         closeOnConfirm: false						
-                 
-                     }).then((result)=>{
-                         if(result.value){
-                             window.location = "crear-consulta";
-                         }
-                     });
-                 </script>';*/
         }
 
 	}

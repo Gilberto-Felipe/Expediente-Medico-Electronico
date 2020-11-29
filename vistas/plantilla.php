@@ -123,6 +123,7 @@
           $_GET["ruta"] == "ver-expediente" ||
           $_GET["ruta"] == "consultas" ||
           $_GET["ruta"] == "crear-consulta" ||
+          $_GET["ruta"] == "ver-consulta" ||
           $_GET["ruta"] == "estudios" ||
           $_GET["ruta"] == "salir"){
 

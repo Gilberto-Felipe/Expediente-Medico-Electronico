@@ -72,7 +72,7 @@ class ModeloConsultas {
 			'doctor_id_doctor' => $_POST['id_doctor'],
 			'diagnostico' => $_POST['diagnostico'],
 			'receta_medica' => $_POST['receta'],
-			'fecha_consulta' => $fechaConsulta,
+			'fecha_consulta' => $fechaConsulta
 			//'estudios_true' => $_POST['edo_civil']			
 		);*/
 
@@ -82,8 +82,8 @@ class ModeloConsultas {
 			VALUES (
 				:id_paciente, :id_doctor, :diagnostico, :receta, :fechaConsulta)");
 
-		$stmt->bindParam(":id_paciente", $datos["paciente_id_paciente"], PDO::PARAM_STR);
-		$stmt->bindParam(":id_doctor", $datos["doctor_id_doctor"], PDO::PARAM_STR);
+		$stmt->bindParam(":id_paciente", $datos["paciente_id_paciente"], PDO::PARAM_INT);
+		$stmt->bindParam(":id_doctor", $datos["doctor_id_doctor"], PDO::PARAM_INT);
 		$stmt->bindParam(":diagnostico", $datos["diagnostico"], PDO::PARAM_STR);
 		$stmt->bindParam(":receta", $datos["receta_medica"], PDO::PARAM_STR);
 		$stmt->bindParam(":fechaConsulta", $datos["fecha_consulta"], PDO::PARAM_STR);
@@ -103,13 +103,13 @@ class ModeloConsultas {
 
 	}
 
-	// obtener el último registro SELECT MAX(column_name) FROM table_name;
-
+	
 	/*=============================================
 	OBTENER ÚLTIMO ID
 	=============================================*/
 	static public function mdlUltimoID(){
 
+		// obtener el último registro SELECT MAX(column_name) FROM table_name;
 		$stmt = Conexion::conectar()->prepare("SELECT MAX(id_paciente) FROM paciente");
 
 		if($stmt->execute()){
