@@ -124,7 +124,7 @@
                     <div class="col-sm-3">
                         <div class="row">
                             <div class="col-sm-12">
-                                <a href="ver-consulta" class="thumbnail btn btn-warning" role="button"
+                                <a href="#" id="irVerExpediente" idExpediente="<?php echo $idExpediente;?>" class="thumbnail btn btn-warning" role="button"
                                     style="width:10rem; height:8rem; border-radius:10px;">
                                     <div class="text-center">
                                         <i class="fa fa-stethoscope"

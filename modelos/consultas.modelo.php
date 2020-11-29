@@ -48,7 +48,7 @@ class ModeloConsultas {
 				FROM $tabla as c 
 				join paciente as p ON c.paciente_id_paciente = p.id_paciente
 				join doctor as d on c.doctor_id_doctor = d.id_doctor
-				order by c.id_consulta"
+				order by c.paciente_id_paciente"
 			);
 
 			$stmt -> execute();

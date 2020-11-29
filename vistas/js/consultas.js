@@ -133,8 +133,6 @@ $("#crear-consulta").on("click", "#btnGuardarConsulta", function(){
 	let receta = $("#receta").val();
 	console.log("TCL: receta", receta);
 
-	let nuevoEstudio = $("#nuevoEstudio").val();
-	console.log("TCL: nuevoEstudio", nuevoEstudio);
 
 });
 

@@ -43,6 +43,7 @@
               <th>Doctor</th>
               <th>Fecha consulta</th>
               <th style="width: 10px">Agregar consulta</th>
+              <th style="width: 10px">Ver consulta</th>
 
             </tr>
 
