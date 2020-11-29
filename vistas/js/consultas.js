@@ -113,9 +113,23 @@ $(".tablaConsultas").on("click", ".btnAgregarConsulta", function(){
 });
 
 /*=============================================
-MANDAR ID_CONSULTA POR GET A ver-consulta.php
+MANDAR ID_CONSULTA POR GET A ver-consulta.php (Listado de todas las consultas)
 =============================================*/
 $(".tablaConsultas").on("click", ".btnVerConsulta", function(){
+
+    let idConsulta = $(this).attr("idConsulta");
+	console.log("TCL: idConsulta", idConsulta);
+
+	if (idConsulta) {
+		window.location = "index.php?ruta=ver-consulta&idConsulta="+idConsulta;
+	}
+
+});
+
+/*=============================================
+MANDAR ID_CONSULTA POR GET A ver-consulta.php (Listado de consultas de un paciente)
+=============================================*/
+$(".btnVerConsulta").click(function(event) {
 
     let idConsulta = $(this).attr("idConsulta");
 	console.log("TCL: idConsulta", idConsulta);
@@ -146,7 +160,6 @@ $("#crear-consulta").on("click", "#btnGuardarConsulta", function(){
 
 	let receta = $("#receta").val();
 	console.log("TCL: receta", receta);
-
 
 });
 

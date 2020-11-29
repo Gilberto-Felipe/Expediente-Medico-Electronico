@@ -10,7 +10,7 @@ class ModeloConsultas {
     static public function mdlMostrarConsultas($tabla, $item, $valor){
 
 		# Lista de todas las consultas
-		if ($item != null && $valor != null) {
+		if ($item == 'paciente_id_paciente') {
 			
 			# "SELECT * from $tabla WHERE $item = :$item"
 			$stmt = Conexion::conectar()->prepare(
@@ -38,8 +38,9 @@ class ModeloConsultas {
 			return $stmt -> fetchAll();
 			
 		}
+
 		# Lista de las consultas de solo un paciente (-> ver-expediente)
-        elseif ($item != null) {
+        elseif ($item == 'id_consulta') {
 			
 			$stmt = Conexion::conectar()->prepare(
 				"SELECT 
