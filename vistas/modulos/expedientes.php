@@ -40,8 +40,8 @@
               <th>#</th>
               <th>Nombre</th>
               <th>Fecha nacimiento</th>
-              <th style="width: 10px">Ver</th>
-              <th style="width: 10px">Modificar</th>
+              <th style="width: 10px">Ver expediente</th>
+              <th style="width: 10px">Agregar consulta</th>
 
             </tr>
 

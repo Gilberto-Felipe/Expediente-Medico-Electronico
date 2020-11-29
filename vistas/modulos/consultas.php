@@ -1,61 +1,75 @@
+<?php
 
-<div class="content-wrapper">
+if (isset($_GET['idExpediente'])): ?>
 
-  <section class="content-header">
+    <?php
+    $idExpediente = $_GET['idExpediente'];
+    // var_dump("HOOOOOOOOOOOOOLLLLLAAAAAAAAAAAAAAA ", $idExpediente);
 
-    <h1>
+    $item = 'paciente_id_paciente';
+    $valor = $idExpediente;
 
-      Administrar Consultas
+    $consultas = ControladorConsultas::ctrMostrarConsultas($item, $valor);
+    $nombre_paciente = $consultas[0]["nombre_paciente"];
+    //var_dump($consultas); 
 
-    </h1>
 
-    <ol class="breadcrumb">
 
-      <li><a href="inicio"><i class="fa fa-dashboard"></i>ECE</a></li>
+    ?>
 
-      <li class="active">Administrar consultas</li>
+    <div class="content-wrapper">
+      <section class="content-header">
+          <h1>Ver Consultas de</h1>
 
-    </ol>
+          <ol class="breadcrumb">
+              <li><a href="inicio"><i class="fa fa-dashboard"></i>ECE</a></li>
+              <li class="active">Ver consultas de</li>
+          </ol>
+      </section>
 
-  </section>
+      <section class="content">
+          <div class="box">
+              <div class="box-header with-border">
+                  <h4><?php echo $nombre_paciente ?></h4>
+              </div>
 
-  <section class="content">
+              <div class="box-body">
+                  <table class="table table-bordered table-striped dt-responsive tablas" width="100%">
+                      <thead>
+                          <tr>
+                              <th style="width: 10px">#</th>
+                              <th>Expediente</th>
+                              <th>Paciente</th>
+                              <th>Doctor</th>
+                              <th>Fecha consulta</th>
+                              <th style="width: 10px">Ver consulta</th>
+                          </tr>
+                      </thead>
+                      
+                      <tbody>
 
-    <div class="box">
-
-      <div class="box-header with-border">
-
-        <h4>Aquí puedes buscar y agregar consultas</h4>
-
-      </div>
-
-      <div class="box-body">
-
-        <table class="table table-bordered table-striped dt-responsive tablaConsultas" width="100%">
-
-          <thead> 
-
+    <?php
+    foreach ($consultas as $key => $value) {
+        echo '
             <tr>
-                
-              <th style="width: 10px">#</th>
-              <th>Expediente</th>
-              <th>Paciente</th>
-              <th>Doctor</th>
-              <th>Fecha consulta</th>
-              <th style="width: 10px">Agregar consulta</th>
-              <th style="width: 10px">Ver consulta</th>
-
+                <td>'.($key+1).'</td>
+                <td>'.$value['id_paciente'].'</td>
+                <td>'.$value['nombre_paciente'].'</td>
+                <td>'.$value['nombre_doctor'].'</td>
+                <td>'.$value['fecha_consulta'].'</td>
+                <td>
+                    <a class="btn btn-info btnVerConsulta" data-toggle="tooltip" data-placement="top" title="Ver consulta" idConsulta="'.$value["id_consulta"].'" style="border-radius:4px;"><i class="fa fa-binoculars"></i></a>
+                </td>
             </tr>
+        ';
+    } 
+    ?>
 
-          </thead>
-            
-        </table>
+                    </tbody>
+                </table>
+            </div>
+            </div><!-- /.box -->
+        </section><!-- /.content -->
+    </div><!-- /.content-wrapper -->
 
-      </div>
-
-    </div><!-- /.box -->
-
-  </section><!-- /.content -->
-
-</div><!-- /.content-wrapper -->
-
+<?php endif; ?>

@@ -33,16 +33,16 @@ class TablaExpedientes{
                     $nombre_completo = $expedientes[$i]["nombre_paciente"]." ".$expedientes[$i]["apellido_p"]." ".$expedientes[$i]["apellido_m"];
 
                     // Dibujar botones de acciones
-                    $ver = "<a class='btn btn-success btnVerExpediente' data-toggle='tooltip' data-placement='top' title='Ver expediente' idExpediente='".$expedientes[$i]["id_paciente"]."' style='margin-right:1rem; border-radius:4px;'><i class='fa fa-address-book'></i></a>";
+                    $ver = "<a class='btn btn-success btnVerExpediente' data-toggle='tooltip' data-placement='top' title='Ver expediente' idExpediente='".$expedientes[$i]["id_paciente"]."' style='border-radius:4px;'><i class='fa fa-address-book'></i></a>";
 
-                    $modificar = "<a class='btn btn-warning btnModificarExpediene' data-toggle='tooltip' data-placement='top' title='Modificar expediente' idExpediente='".$expedientes[$i]["id_paciente"]."' href='#' style='border-radius:4px;'><i class='fa fa-pencil'></i></a>";		
+                    $agregarConsulta = "<a class='btn btn-warning btnAgregarConsulta' data-toggle='tooltip' data-placement='top' title='Agregar consulta' idExpediente='".$expedientes[$i]["id_paciente"]."' style='border-radius:4px;'><i class='fa fa-pencil'></i></a>";		
 		  			
 		  			$datosJson .= '[
 						"'.($i+1).'",
 						"'.$nombre_completo.'",
 						"'.$expedientes[$i]["fecha_nacimiento"].'",
 						"'.$ver.'",
-						"'.$modificar.'"
+						"'.$agregarConsulta.'"
 				    ],';
 
 		  		}

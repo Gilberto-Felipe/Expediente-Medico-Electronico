@@ -12,7 +12,7 @@
 
         // Pedir datos al controlador
         $consulta = ControladorConsultas::ctrMostrarConsultas($item, $valor);
-        var_dump($consulta);
+        //var_dump($consulta);
 
         $idExpediente = $consulta['id_paciente'];
         $nombre_paciente = $consulta['nombre_paciente'];
@@ -106,14 +106,11 @@
                     </div>
                     
                     <!-- BOTÓN AGREGAR ESTUDIO -->
-                    <a class="btn btn-primary" href="#">Agregar Estudio</a>
+                    <a class="btn btn-info" href="#" style="color:black"><i class='fa fa-binoculars'><span style="margin-left:1.5rem;">Ver estudios</span></i></a>
                 </div><!-- /.box-body-->
 
-                <div class="box-footer" style="padding:1rem 5rem;">
-                    <button type="submit" id="btnGuardarConsulta" class="btn btn-success btn-lg">Guardar
-                        consulta</button>
-                    <button type="button" class="btn btn-normal" id="btnLimpiar" style="margin-left:2rem;">Limpiar
-                        formulario</button>
+                <div class="box-footer text-right" style="padding:1rem 5rem;">
+                    <a href="inicio" id="btnGuardarConsulta" class="btn btn-primary btn-lg">Ir a inicio</a>
                 </div><!-- /.box-footer-->
             </form>
         </div><!-- /.box -->
