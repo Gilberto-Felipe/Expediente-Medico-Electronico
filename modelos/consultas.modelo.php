@@ -9,7 +9,8 @@ class ModeloConsultas {
 	=============================================*/
     static public function mdlMostrarConsultas($tabla, $item, $valor){
 
-        if ($item != null) {
+		# Lista de todas las consultas
+		if ($item != null && $valor != null) {
 			
 			# "SELECT * from $tabla WHERE $item = :$item"
 			$stmt = Conexion::conectar()->prepare(
@@ -35,11 +36,39 @@ class ModeloConsultas {
 			$stmt -> execute();
 
 			return $stmt -> fetchAll();
+			
+		}
+		# Lista de las consultas de solo un paciente (-> ver-expediente)
+        elseif ($item != null) {
+			
+			$stmt = Conexion::conectar()->prepare(
+				"SELECT 
+					c.id_consulta as 'id_consulta',
+					c.paciente_id_paciente as 'id_paciente',
+					concat(p.nombre_paciente,' ', p.apellido_p,' ', p.apellido_m) as 'nombre_paciente',
+					p.fecha_nacimiento as 'fecha_nacimiento',
+					c.doctor_id_doctor as 'id_doctor',
+					concat(d.nombre_doctor,' ',d.apellidop_doctor,' ',d.apellidom_doctor) as 'nombre_doctor',
+					c.fecha_consulta as 'fecha_consulta',
+					c.receta_medica as 'receta',
+    				c.diagnostico as 'diagnostico',
+					c.estudios_true as 'estudios_si'
+				FROM $tabla as c 
+				join paciente as p ON c.paciente_id_paciente = p.id_paciente
+				join doctor as d on c.doctor_id_doctor = d.id_doctor
+				WHERE $item = :$item"
+			);
+
+			$stmt -> bindParam(":".$item, $valor, PDO::PARAM_INT);
+
+			$stmt -> execute();
+
+			return $stmt -> fetch();
 
         } 
-        
+        # Lista de todas las consultas
 		else{
-
+			
 			$stmt = Conexion::conectar()->prepare(
 				"SELECT 
 					c.id_consulta as 'id_consulta',
