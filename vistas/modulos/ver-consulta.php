@@ -12,7 +12,7 @@
 
         // Pedir datos al controlador
         $consulta = ControladorConsultas::ctrMostrarConsultas($item, $valor);
-        //var_dump($consulta);
+        var_dump($consulta);
 
         $idExpediente = $consulta['id_paciente'];
         $nombre_paciente = $consulta['nombre_paciente'];
@@ -20,6 +20,9 @@
         $idDoctor = $consulta['id_doctor'];
         $nombre_doctor = $consulta['nombre_doctor'];
         $fecha_consulta = $consulta['fecha_consulta'];
+        $diagnostico = $consulta['diagnostico'];
+        $receta = $consulta['receta'];
+        $estudios =  $consulta['estudios_si'];
 
         // calcular edad
         $fecha_nacimiento = new DateTime($fecha_nacimiento);
@@ -46,7 +49,7 @@
 
         <h1>
 
-            Registrar Consulta
+            Ver Consulta
 
             <small></small>
 
@@ -94,14 +97,12 @@
 
                     <div class="form-group" style="padding:0rem 0rem;">
                         <label for="diagnostico" class="control-label">Diagnóstico</label>
-                        <textarea class="form-control" id="diagnostico" name="diagnostico" rows="3" cols="80"
-                            style="resize:none;" placeholder="Escribe..." spellcheck="false"></textarea>
+                        <p><?php echo $diagnostico;?></p>
                     </div>
 
                     <div class="form-group" style="padding:0rem 0rem;">
                         <label for="receta" class="control-label">Receta</label>
-                        <textarea class="form-control" id="receta" name="receta" rows="3" cols="80" style="resize:none;"
-                            placeholder="Escribe..." spellcheck="false"></textarea>
+                        <p><?php echo $receta;?></p>
                     </div>
                     
                     <!-- BOTÓN AGREGAR ESTUDIO -->

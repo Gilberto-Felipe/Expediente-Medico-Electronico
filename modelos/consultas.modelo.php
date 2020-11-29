@@ -20,7 +20,10 @@ class ModeloConsultas {
 					p.fecha_nacimiento as 'fecha_nacimiento',
 					c.doctor_id_doctor as 'id_doctor',
 					concat(d.nombre_doctor,' ',d.apellidop_doctor,' ',d.apellidom_doctor) as 'nombre_doctor',
-					c.fecha_consulta as 'fecha_consulta'
+					c.fecha_consulta as 'fecha_consulta',
+					c.receta_medica as 'receta',
+    				c.diagnostico as 'diagnostico',
+					c.estudios_true as 'estudios_si'
 				FROM $tabla as c 
 				join paciente as p ON c.paciente_id_paciente = p.id_paciente
 				join doctor as d on c.doctor_id_doctor = d.id_doctor

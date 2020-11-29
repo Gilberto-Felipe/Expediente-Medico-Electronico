@@ -99,7 +99,7 @@ $(".tablaExpedientes").on("click", ".btnVerExpediente", function(){
 
 
 /*=============================================
-MANDAR ID_PACIENTE POR AJAX A ver-expediente.php
+MANDAR ID_CONSULTA POR GET A crear-consulta.php
 =============================================*/
 $(".tablaConsultas").on("click", ".btnAgregarConsulta", function(){
 
@@ -108,6 +108,20 @@ $(".tablaConsultas").on("click", ".btnAgregarConsulta", function(){
 
 	if (idConsulta) {
 		window.location = "index.php?ruta=crear-consulta&idConsulta="+idConsulta;
+	}
+
+});
+
+/*=============================================
+MANDAR ID_CONSULTA POR GET A ver-consulta.php
+=============================================*/
+$(".tablaConsultas").on("click", ".btnVerConsulta", function(){
+
+    let idConsulta = $(this).attr("idConsulta");
+	console.log("TCL: idConsulta", idConsulta);
+
+	if (idConsulta) {
+		window.location = "index.php?ruta=ver-consulta&idConsulta="+idConsulta;
 	}
 
 });
