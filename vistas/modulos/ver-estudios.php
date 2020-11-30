@@ -1,17 +1,17 @@
 <?php
 
-    if (isset($_GET['idConsulta'])) {
+    if (isset($_GET['idExpediente'])) {
 
-        // Recibir idConsulta
-        $idConsulta = $_GET['idConsulta'];
-        // echo "HOLAAAAAAAAAAAAAAAAAAAA ".$idConsulta;
+        // Recibir idExpediente
+        $idExpediente = $_GET['idExpediente'];
+        // echo "HOLAAAAAAAAAAAAAAAAAAAA ".$idExpediente;
 
-        $item = "id_consulta";
-        $valor = $idConsulta;
-        //echo $item.$valor;
-
+        $item = "paciente_id_paciente";
+        $valor = $idExpediente;
+        echo $item.$valor;
+/*
         // Pedir datos al controlador
-        $consulta = ControladorConsultas::ctrMostrarConsultas($item, $valor);
+        $estudios = ControladorConsultas::ctrMostrarConsultas($item, $valor);
         //var_dump($consulta);
 
         $idExpediente = $consulta['id_paciente'];
@@ -38,9 +38,8 @@
 
     }
     else {
-        echo "¡Hubo un error! Comunícate con el personal de sistemas.";
+        echo "¡Hubo un error! Comunícate con el personal de sistemas.";*/
     }
-
 ?>
 
 <div class="content-wrapper">
@@ -49,7 +48,7 @@
 
         <h1>
 
-            Ver Consulta
+            Ver Estudios de
 
             <small></small>
 
@@ -59,7 +58,7 @@
 
             <li><a href="inicio"><i class="fa fa-dashboard"></i>ECE</a></li>
 
-            <li class="active">Ver consulta</li>
+            <li class="active">Ver estudios de</li>
 
         </ol>
     </section><!-- /.section content-header-->

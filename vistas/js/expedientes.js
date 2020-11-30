@@ -112,7 +112,7 @@ $(".tablaExpedientes").on("click", ".btnVerExpediente", function(){
 });
 
 /*=============================================
-MANDAR POR GER ID_PACIENTE A ver-consultas.php
+MANDAR POR GET ID_PACIENTE A ver-consultas.php
 =============================================*/
 $("#irVerExpediente").click(function(event) {
 
@@ -121,5 +121,18 @@ $("#irVerExpediente").click(function(event) {
 
 	if (idExpediente) {
 		window.location = "index.php?ruta=consultas&idExpediente="+idExpediente;
+	}
+});
+
+/*=============================================
+MANDAR POR GET ID_PACIENTE A ver-estudios.php
+=============================================*/
+$("#irVerEstudios").click(function(event) {
+
+	let idExpediente = $("#irVerEstudios").attr("idExpediente");
+	console.log(idExpediente);
+
+	if (idExpediente) {
+		window.location = "index.php?ruta=ver-estudios&idExpediente="+idExpediente;
 	}
 });

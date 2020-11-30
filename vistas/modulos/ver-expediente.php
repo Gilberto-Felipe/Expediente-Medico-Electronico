@@ -124,7 +124,7 @@
                     <div class="col-sm-3">
                         <div class="row">
                             <div class="col-sm-12">
-                                <a id="irVerExpediente" idExpediente="<?php echo $idExpediente;?>" class="thumbnail btn btn-warning" role="button"
+                                <button id="irVerExpediente" idExpediente="<?php echo $idExpediente;?>" class="thumbnail btn btn-warning" role="button"
                                     style="width:10rem; height:8rem; border-radius:10px;">
                                     <div class="text-center">
                                         <i class="fa fa-stethoscope"
@@ -134,10 +134,10 @@
                                     <div class="caption">
                                         <p class="text-center" style="color:black">Ver consultas</p>
                                     </div>
-                                </a>
+                                </button>
                             </div>
                             <div class="col-sm-12">
-                                <a id="irVerEstudios" id= class="thumbnail btn btn-info" role="button"
+                                <button id="irVerEstudios" idExpediente="<?php echo $idExpediente;?>" class="thumbnail btn btn-info" role="button"
                                     style="width:10rem; height:8rem; border-radius:10px;">
                                     <div class="text-center">
                                         <i class="fa fa-flask" style="font-size:3rem; padding-top:1rem; color:black;"
@@ -146,7 +146,7 @@
                                     <div class="caption">
                                         <p class="text-center" style="color:black">Ver estudios</p>
                                     </div>
-                                </a>
+                                </button>
                             </div>
                         </div><!-- /.row -->
                     </div><!-- /.col-sm-4 -->
