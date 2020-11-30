@@ -37,17 +37,6 @@
  
 			</li>
  
-			<li>
- 
-				<a href="estudios">
- 
-					<i class="fa fa-flask"></i>
-					<span>Estudios</span>
- 
-				</a>
- 
-			</li>
- 
 		</ul>
  
 	 </section>
