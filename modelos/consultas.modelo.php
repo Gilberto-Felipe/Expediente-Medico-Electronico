@@ -139,7 +139,7 @@ class ModeloConsultas {
 	
 	/*=============================================
 	OBTENER ÚLTIMO ID
-	=============================================*/
+
 	static public function mdlUltimoID(){
 
 		// obtener el último registro SELECT MAX(column_name) FROM table_name;
@@ -159,5 +159,6 @@ class ModeloConsultas {
 		$stmt->close();
 		$stmt = null;
 	}
+	=============================================*/
 
 }

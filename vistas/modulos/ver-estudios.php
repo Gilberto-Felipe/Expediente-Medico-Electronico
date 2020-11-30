@@ -1,15 +1,16 @@
 <?php
 
-    $idConsulta = $_GET['idConsulta'];
-    //var_dump("HOOOOOOOOOOOOOLLLLLAAAAAAAAAAAAAAA ", $idConsulta);
+    $idExpediente = $_GET['idExpediente'];
+    //var_dump("HOOOOOOOOOOOOOLLLLLAAAAAAAAAAAAAAA ", $idExpediente);
 
-    $item = 'consulta_id_consulta';
-    $valor = $idConsulta;
+    $item = 'paciente_id_paciente';
+    $valor = $idExpediente;
     //echo $item.$valor;
 
     $estudios = ControladorEstudios::ctrMostrarEstudios($item, $valor);
+
     $nombrePaciente = $estudios[0]['nombre_paciente'];
-    //var_dump($estudios); 
+    // var_dump($estudios);
 
 ?>
 
@@ -56,7 +57,7 @@
                 <td>'.$value['fecha_consulta'].'</td>
 
                 <td>
-                    <a class="btn btn-info btnVerConsulta" data-toggle="tooltip" data-placement="top" title="Ver consulta" idConsulta="'.$value["id_consulta"].'" style="border-radius:4px;"><i class="fa fa-binoculars"></i></a>
+                    <a class="btn btn-info btnVerEstudio" data-toggle="tooltip" data-placement="top" title="Ver cestudio" idEstudio="'.$value["id_estudio"].'" style="border-radius:4px;"><i class="fa fa-binoculars"></i></a>
                 </td>
             </tr>
         ';

@@ -15,6 +15,7 @@
         //var_dump($consulta);
 
         $idExpediente = $consulta['id_paciente'];
+        //echo "quéeeeeeeee pasó ".$idExpediente;
         $nombre_paciente = $consulta['nombre_paciente'];
         $fecha_nacimiento = $consulta['fecha_nacimiento'];
         $idDoctor = $consulta['id_doctor'];
@@ -22,7 +23,8 @@
         $fecha_consulta = $consulta['fecha_consulta'];
         $diagnostico = $consulta['diagnostico'];
         $receta = $consulta['receta'];
-        $estudios =  $consulta['estudios_si'];
+        $estudiosT =  $consulta['estudios_si'];
+        //echo "HEEEEEEEEEEEEEEEEEEEEEEEEEYYYYYYYYYYYY ".$estudiosT;
 
         // calcular edad
         $fecha_nacimiento = new DateTime($fecha_nacimiento);
@@ -86,14 +88,9 @@
 
             <div class="box-body" style="padding:1rem 5rem;">
 
-                <input type="hidden" id="id_consulta" name="id_consulta" value="<?php echo $idConsulta;?>">
-                <input type="hidden" id="id_paciente" name="id_paciente" value="<?php echo $idExpediente;?>">
-                <input type="hidden" id="id_doctor" name="id_doctor" value="<?php echo $idDoctor;?>">
-
                 <p class=""><strong>Edad: </strong><?php echo $edad;?></p>
 
                 <p class=""><strong>Fecha consulta:</strong> <?php echo $fecha_actual;?></p>
-                <input type="hidden" id="fecha_consulta" name="fecha_consulta" value="<?php echo $fecha_actual;?>">
 
                 <div class="form-group" style="padding:0rem 0rem;">
                     <label for="diagnostico" class="control-label">Diagnóstico</label>
@@ -105,9 +102,14 @@
                     <p><?php echo $receta;?></p>
                 </div>
 
-                <!-- BOTÓN VER ESTUIDIOS -->
-                <button id="irVerEstudios" idConsulta="<?php echo $idConsulta;?>" class="btn btn-info" style="color:black"><i class='fa fa-binoculars'><span
-                            style="margin-left:1.5rem;">Ver estudios</span></i></button>
+                <?php if ($estudiosT > 0): ?>
+                <button id="irVerEstudios" idExpediente="<?php echo $idExpediente;?>" class="btn btn-info"
+                    style="color:black;"><i class="fa fa-binoculars"><span style="margin-left:1.5rem;">Ver
+                            estudios</span></i>
+                </button>
+                <?php endif; ?>
+
+
             </div><!-- /.box-body-->
 
             <div class="box-footer text-right" style="padding:1rem 5rem;">
