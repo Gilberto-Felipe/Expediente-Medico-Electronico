@@ -40,8 +40,8 @@
       <!-- box-body -->
       <div style="padding:6rem 0rem;">
         <div class="row">
-
-          <div class="col-sm-6 col-md-4">          
+          <div class="col-sm-3"></div>
+          <div class="col-sm-3 center-block">    
             <a href="expedientes" class="thumbnail btn btn-success" role="button" style="width:22rem; height:18rem; border-radius:10px;">
               <div class="text-center">
                 <i class="fa fa-address-book" style="font-size:8rem; padding-top:2rem; color:black;" aria-hidden="true"></i>
@@ -49,10 +49,10 @@
               <div class="caption">
                 <h3 class="text-center" style="color:black;">Expedientes</h3>
               </div>
-            </a>
+            </a> 
           </div>
 
-          <div class="col-sm-6 col-md-4">          
+          <div class="col-sm-3">          
             <a href="consultas" class="thumbnail btn btn-warning" role="button" style="width:22rem; height:18rem; border-radius:10px;">
               <div class="text-center">
                 <i class="fa fa-stethoscope" style="font-size:8rem; padding-top:2rem; color:black;" aria-hidden="true"></i>
@@ -62,18 +62,7 @@
               </div>
             </a>
           </div>
-
-          <div class="col-sm-6 col-md-4">          
-            <a href="#" class="thumbnail btn btn-info" role="button" style="width:22rem; height:18rem; border-radius:10px;">
-              <div class="text-center">
-                <i class="fa fa-flask" style="font-size:8rem; padding-top:2rem; color:black;" aria-hidden="true"></i>
-              </div>
-              <div class="caption">
-                <h3 class="text-center" style="color:black">Estudios</h3>
-              </div>
-            </a>
-          </div>
-
+          <div class="col-sm-3"></div>
         </div>
         <!-- raw -->
       </div>
