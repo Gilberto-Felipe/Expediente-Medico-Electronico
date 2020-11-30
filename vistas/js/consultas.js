@@ -168,11 +168,11 @@ MANDAR POR GET ID_PACIENTE DE ver-consulta.php A ver-estudios.php
 =============================================*/
 $("#irVerEstudios").click(function(event) {
 
-	let idExpediente = $("#irVerEstudios").attr("idExpediente");
-	console.log(idExpediente);
+	let idConsulta = $("#irVerEstudios").attr("idConsulta");
+	console.log("TDC idConsulta ",idConsulta);
 
-	if (idExpediente) {
-		//window.location = "index.php?ruta=ver-estudios&idExpediente="+idExpediente;
+	if (idConsulta) {
+		window.location = "index.php?ruta=ver-estudios&idConsulta="+idConsulta;
 	}
 });
 

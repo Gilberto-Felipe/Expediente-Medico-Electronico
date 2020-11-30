@@ -1,10 +1,10 @@
 <?php
 
-    $idExpediente = $_GET['idExpediente'];
-    //var_dump("HOOOOOOOOOOOOOLLLLLAAAAAAAAAAAAAAA ", $idExpediente);
+    $idConsulta = $_GET['idConsulta'];
+    //var_dump("HOOOOOOOOOOOOOLLLLLAAAAAAAAAAAAAAA ", $idConsulta);
 
-    $item = 'paciente_id_paciente';
-    $valor = $idExpediente;
+    $item = 'consulta_id_consulta';
+    $valor = $idConsulta;
     //echo $item.$valor;
 
     $estudios = ControladorEstudios::ctrMostrarEstudios($item, $valor);

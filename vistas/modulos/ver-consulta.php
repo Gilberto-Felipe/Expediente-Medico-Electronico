@@ -83,37 +83,37 @@
                 </div><!-- /.row -->
             </div><!-- /.box-header-->
 
-            <form role="form" method="post" id="crear-consulta" enctype="multipart/form-data">
-                <div class="box-body" style="padding:1rem 5rem;">
 
-                    <input type="hidden" id="id_consulta" name="id_consulta" value="<?php echo $idConsulta;?>">
-                    <input type="hidden" id="id_paciente" name="id_paciente" value="<?php echo $idExpediente;?>">
-                    <input type="hidden" id="id_doctor" name="id_doctor" value="<?php echo $idDoctor;?>">
+            <div class="box-body" style="padding:1rem 5rem;">
 
-                    <p class=""><strong>Edad: </strong><?php echo $edad;?></p>
+                <input type="hidden" id="id_consulta" name="id_consulta" value="<?php echo $idConsulta;?>">
+                <input type="hidden" id="id_paciente" name="id_paciente" value="<?php echo $idExpediente;?>">
+                <input type="hidden" id="id_doctor" name="id_doctor" value="<?php echo $idDoctor;?>">
 
-                    <p class=""><strong>Fecha consulta:</strong> <?php echo $fecha_actual;?></p>
-                    <input type="hidden" id="fecha_consulta" name="fecha_consulta" value="<?php echo $fecha_actual;?>">
+                <p class=""><strong>Edad: </strong><?php echo $edad;?></p>
 
-                    <div class="form-group" style="padding:0rem 0rem;">
-                        <label for="diagnostico" class="control-label">Diagnóstico</label>
-                        <p><?php echo $diagnostico;?></p>
-                    </div>
+                <p class=""><strong>Fecha consulta:</strong> <?php echo $fecha_actual;?></p>
+                <input type="hidden" id="fecha_consulta" name="fecha_consulta" value="<?php echo $fecha_actual;?>">
 
-                    <div class="form-group" style="padding:0rem 0rem;">
-                        <label for="receta" class="control-label">Receta</label>
-                        <p><?php echo $receta;?></p>
-                    </div>
-                    
-                    <!-- BOTÓN AGREGAR ESTUDIO -->
-                    <button id="irVerEstudios" class="btn btn-info" style="color:black"><i class='fa fa-binoculars'><span style="margin-left:1.5rem;">Ver estudios</span></i></button>
-                </div><!-- /.box-body-->
+                <div class="form-group" style="padding:0rem 0rem;">
+                    <label for="diagnostico" class="control-label">Diagnóstico</label>
+                    <p><?php echo $diagnostico;?></p>
+                </div>
 
-                <div class="box-footer text-right" style="padding:1rem 5rem;">
-                    <a href="inicio" id="btnGuardarConsulta" class="btn btn-primary btn-lg">Ir a inicio</a>
-                </div><!-- /.box-footer-->
-            </form>
+                <div class="form-group" style="padding:0rem 0rem;">
+                    <label for="receta" class="control-label">Receta</label>
+                    <p><?php echo $receta;?></p>
+                </div>
+
+                <!-- BOTÓN VER ESTUIDIOS -->
+                <button id="irVerEstudios" idConsulta="<?php echo $idConsulta;?>" class="btn btn-info" style="color:black"><i class='fa fa-binoculars'><span
+                            style="margin-left:1.5rem;">Ver estudios</span></i></button>
+            </div><!-- /.box-body-->
+
+            <div class="box-footer text-right" style="padding:1rem 5rem;">
+                <a href="inicio" class="btn btn-primary btn-lg">Ir a inicio</a>
+            </div><!-- /.box-footer-->
+
         </div><!-- /.box -->
     </section><!-- /.content -->
 </div><!-- /.content-wrapper -->
-
