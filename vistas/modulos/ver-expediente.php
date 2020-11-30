@@ -8,7 +8,7 @@
         $item = "id_paciente";
         $valor = $idExpediente;
 
-        // Pedir datos al controlador
+        // Pedir datos Expediente al controlador
         $paciente = ControladorExpedientes::ctrMostrarExpedientes($item, $valor);
         
         $nombre_completo = $paciente["nombre_paciente"]." ".$paciente["apellido_p"]." ".$paciente["apellido_m"];
@@ -59,6 +59,7 @@
         echo $alergias;
         echo $antecedentes_medicos;
         echo $antecedentes_familiarles;*/
+
 
     }
     else {
@@ -123,8 +124,9 @@
                     </div>
                     <div class="col-sm-3">
                         <div class="row">
-                            <div class="col-sm-12">
-                                <button id="irVerExpediente" idExpediente="<?php echo $idExpediente;?>" class="thumbnail btn btn-warning" role="button"
+                            <div class="col-sm-4">
+                                <button id="irVerExpediente" idExpediente="<?php echo $idExpediente;?>"
+                                    class="thumbnail btn btn-warning" role="button"
                                     style="width:10rem; height:8rem; border-radius:10px;">
                                     <div class="text-center">
                                         <i class="fa fa-stethoscope"
@@ -136,59 +138,11 @@
                                     </div>
                                 </button>
                             </div>
-                            <div class="col-sm-12">
-                                <button id="irVerEstudios" idExpediente="<?php echo $idExpediente;?>" class="thumbnail btn btn-info" role="button"
-                                    style="width:10rem; height:8rem; border-radius:10px;">
-                                    <div class="text-center">
-                                        <i class="fa fa-flask" style="font-size:3rem; padding-top:1rem; color:black;"
-                                            aria-hidden="true"></i>
-                                    </div>
-                                    <div class="caption">
-                                        <p class="text-center" style="color:black">Ver estudios</p>
-                                    </div>
-                                </button>
-                            </div>
                         </div><!-- /.row -->
                     </div><!-- /.col-sm-4 -->
                 </div><!-- /.row -->
 
             </div><!-- /.box-body-->
-
-            <!-- 
-            <div class="box-footer">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <a href="#" class="thumbnail btn btn-warning" role="button"
-                                style="width:10rem; height:8rem; border-radius:10px;">
-                                <div class="text-center">
-                                    <i class="fa fa-stethoscope" style="font-size:3rem; padding-top:1rem; color:black;"
-                                        aria-hidden="true"></i>
-                                </div>
-                                <div class="caption">
-                                    <p class="text-center" style="color:black">Ver consultas</p>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="col-sm-6">
-                            <a href="#" class="thumbnail btn btn-info" role="button"
-                                style="width:10rem; height:8rem; border-radius:10px;">
-                                <div class="text-center">
-                                    <i class="fa fa-flask" style="font-size:3rem; padding-top:1rem; color:black;"
-                                        aria-hidden="true"></i>
-                                </div>
-                                <div class="caption">
-                                    <p class="text-center" style="color:black">Ver estudios</p>
-                                </div>
-                            </a>
-                        </div>
-
-                    </div>
-                </div>
-            </div></.box-footer
--->
-
 
         </div><!-- /.box -->
 

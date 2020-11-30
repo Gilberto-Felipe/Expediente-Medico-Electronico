@@ -136,16 +136,6 @@ class ModeloExpedientes {
 	=============================================*/
 	static public function mdlRegistrarContacto($tabla3, $datos3){
 
-		/*$datos3 = array(
-			'paciente_id_paciente' => $last_id,
-			'nombre_contacto' => $_POST['nombre_contacto'],
-			'apellidop_contacto' => $_POST['apellidop_contacto'],
-			'apellidom_contacto' => $_POST['apellidom_contacto'],
-			'relacion_paciente' => $_POST['parentesco'],
-			'telefono' => $_POST['tel_contacto'],
-			'email_contacto' => $email_contacto
-		);*/
-		
 		$stmt = Conexion::conectar()->prepare(
 			"INSERT INTO $tabla3(paciente_id_paciente, nombre_contacto, apellidop_contacto, apellidom_contacto, 
 			relacion_paciente, telefono, email_contacto) 

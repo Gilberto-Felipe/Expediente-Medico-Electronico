@@ -106,7 +106,7 @@
                     </div>
                     
                     <!-- BOTÓN AGREGAR ESTUDIO -->
-                    <a class="btn btn-info" href="#" style="color:black"><i class='fa fa-binoculars'><span style="margin-left:1.5rem;">Ver estudios</span></i></a>
+                    <button id="irVerEstudios" class="btn btn-info" style="color:black"><i class='fa fa-binoculars'><span style="margin-left:1.5rem;">Ver estudios</span></i></button>
                 </div><!-- /.box-body-->
 
                 <div class="box-footer text-right" style="padding:1rem 5rem;">
@@ -117,10 +117,3 @@
     </section><!-- /.content -->
 </div><!-- /.content-wrapper -->
 
-
-<?php 
-
-    $crearConsulta = new ControladorConsultas();
-    $crearConsulta -> ctrCrearConsulta();
-
-?>
