@@ -112,6 +112,20 @@ $(".tablaExpedientes").on("click", ".btnVerExpediente", function(){
 });
 
 /*=============================================
+MANDAR ID_CONSULTA POR GET A crear-consulta.php
+=============================================*/
+$(".tablaExpedientes").on("click", ".btnAgregarConsulta", function(){
+
+    let idExpediente = $(this).attr("idExpediente");
+	console.log("TCL: idExpediente", idExpediente);
+
+	if (idExpediente) {
+		window.location = "index.php?ruta=crear-consulta&idExpediente="+idExpediente;
+	}
+
+});
+
+/*=============================================
 MANDAR POR GET ID_PACIENTE A ver-consultas.php
 =============================================*/
 $("#irVerExpediente").click(function(event) {

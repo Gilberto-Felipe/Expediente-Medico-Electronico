@@ -103,9 +103,14 @@
                         <textarea class="form-control" id="receta" name="receta" rows="3" cols="80" style="resize:none;"
                             placeholder="Escribe..." spellcheck="false"></textarea>
                     </div>
-                    
+
                     <!-- BOTÓN AGREGAR ESTUDIO -->
-                    <a class="btn btn-primary" href="#">Agregar Estudio</a>
+                    <button class="btn btn-primary">Solicitar Estudio</button>
+                    <button class="btn btn-primary">Subir Estudio</button>
+                    <div class="alert alert-warning">
+                        <strong>¡Atención!</strong> Los cambios no se guardarán hasta que .
+                    </div>
+
                 </div><!-- /.box-body-->
 
                 <div class="box-footer" style="padding:1rem 5rem;">
@@ -122,7 +127,7 @@
 
 <?php 
 
-    $crearConsulta = new ControladorConsultas();
-    $crearConsulta -> ctrCrearConsulta();
+    #$crearConsulta = new ControladorConsultas();
+    #$crearConsulta -> ctrCrearConsulta();
 
 ?>

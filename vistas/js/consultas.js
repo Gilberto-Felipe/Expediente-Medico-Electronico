@@ -99,20 +99,6 @@ $(".tablaExpedientes").on("click", ".btnVerExpediente", function(){
 
 
 /*=============================================
-MANDAR ID_CONSULTA POR GET A crear-consulta.php
-=============================================*/
-$(".tablaConsultas").on("click", ".btnAgregarConsulta", function(){
-
-    let idConsulta = $(this).attr("idConsulta");
-	console.log("TCL: idConsulta", idConsulta);
-
-	if (idConsulta) {
-		window.location = "index.php?ruta=crear-consulta&idConsulta="+idConsulta;
-	}
-
-});
-
-/*=============================================
 MANDAR ID_CONSULTA POR GET A ver-consulta.php (Listado de todas las consultas)
 =============================================*/
 $(".tablaConsultas").on("click", ".btnVerConsulta", function(){

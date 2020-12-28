@@ -57,7 +57,7 @@
                 <td>'.$value['fecha_consulta'].'</td>
 
                 <td>
-                    <a class="btn btn-info btnVerEstudio" data-toggle="tooltip" data-placement="top" title="Ver cestudio" idEstudio="'.$value["id_estudio"].'" style="border-radius:4px;"><i class="fa fa-binoculars"></i></a>
+                    <a class="btn btn-info btnVerEstudio" href="vistas\img\estudios\exp-00000001-juannepomucenogarcia-0001/Mapa_curricular.pdf" data-toggle="tooltip" data-placement="top" title="Ver estudio" idEstudio="'.$value["id_estudio"].'" style="border-radius:4px;"><i class="fa fa-binoculars"></i></a>
                 </td>
             </tr>
         ';
