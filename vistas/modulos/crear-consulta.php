@@ -1,25 +1,32 @@
 <?php
 
-    if (isset($_GET['idConsulta'])) {
+    if (isset($_GET['idExpediente'])) {
 
-        // Recibir idConsulta
-        $idConsulta = $_GET['idConsulta'];
-        // echo "HOLAAAAAAAAAAAAAAAAAAAA ".$idConsulta;
+        // Recibir idExpediente
+        $idExpediente = $_GET['idExpediente'];
+        // echo "HOLAAAAAAAAAAAAAAAAAAAA ".$idExpediente;
 
-        $item = "id_consulta";
-        $valor = $idConsulta;
+        $item = "id_paciente";
+        $valor = $idExpediente;
         //echo $item.$valor;
 
         // Pedir datos al controlador
-        $consulta = ControladorConsultas::ctrMostrarConsultas($item, $valor);
-        //var_dump($consulta);
+        $expediente = ControladorExpedientes::ctrMostrarExpedientes($item, $valor);
+        var_dump($expediente);
 
-        $idExpediente = $consulta['id_paciente'];
-        $nombre_paciente = $consulta['nombre_paciente'];
-        $fecha_nacimiento = $consulta['fecha_nacimiento'];
-        $idDoctor = $consulta['id_doctor'];
-        $nombre_doctor = $consulta['nombre_doctor'];
-        $fecha_consulta = $consulta['fecha_consulta'];
+        $idExpediente = $expediente['id_paciente'];
+        $nombre_paciente = $expediente['nombre_paciente'];
+        $apellido_p = $expediente['apellido_p'];
+        $apellido_m = $expediente['apellido_m'];
+        $fecha_nacimiento = $expediente['fecha_nacimiento'];
+        $sexo = $expediente['sexo'];
+
+        // codificar sexo
+        if ($sexo == 1) {
+            $sexo_c = "Hombre";
+        } else {
+            $sexo_c = "Mujer";
+        }
 
         // calcular edad
         $fecha_nacimiento = new DateTime($fecha_nacimiento);
@@ -28,10 +35,8 @@
         // echo $fecha_nacimiento->diff($hoy)->y;
 
         // formatear fechas
-        // $fecha_nacimiento = date('d-m-Y', strtotime($paciente["fecha_nacimiento"]));
-        //$fecha_consulta = date('d-m-Y', strtotime($consulta['fecha_consulta']));
         date_default_timezone_set("America/Mexico_City");
-        $fecha_actual = date("d-m-Y H:i:s");
+        $fecha_actual = date("d-m-Y H:i");
 
     }
     else {
@@ -70,7 +75,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <h3 class="title" name="nombre_paciente">
-                            <?php echo $nombre_paciente;?>
+                            <?php echo $nombre_paciente." ".$apellido_p." ".$apellido_m;?>
                         </h3>
                     </div>
                     <div class="col-md-6">
@@ -82,14 +87,13 @@
 
             <form role="form" method="post" id="crear-consulta" enctype="multipart/form-data">
                 <div class="box-body" style="padding:1rem 5rem;">
-
-                    <input type="hidden" id="id_consulta" name="id_consulta" value="<?php echo $idConsulta;?>">
                     <input type="hidden" id="id_paciente" name="id_paciente" value="<?php echo $idExpediente;?>">
-                    <input type="hidden" id="id_doctor" name="id_doctor" value="<?php echo $idDoctor;?>">
 
                     <p class=""><strong>Edad: </strong><?php echo $edad;?></p>
+                    <input type="hidden" id="edad" name="edad" value="<?php echo $idExpediente;?>">
 
-                    <p class=""><strong>Fecha consulta:</strong> <?php echo $fecha_actual;?></p>
+                    <p><strong>Sexo: </strong><?php echo $sexo_c;?></p>
+                    <p class=""><strong>Fecha consulta: </strong> <?php echo $fecha_actual;?></p>
                     <input type="hidden" id="fecha_consulta" name="fecha_consulta" value="<?php echo $fecha_actual;?>">
 
                     <div class="form-group" style="padding:0rem 0rem;">
@@ -105,10 +109,11 @@
                     </div>
 
                     <!-- BOTÓN AGREGAR ESTUDIO -->
-                    <button class="btn btn-primary">Solicitar Estudio</button>
-                    <button class="btn btn-primary">Subir Estudio</button>
-                    <div class="alert alert-warning">
-                        <strong>¡Atención!</strong> Los cambios no se guardarán hasta que .
+                    <button class="btn btn-info">Solicitar Estudio</button>
+                    <button class="btn btn-primary" style="margin-left:2rem;">Subir Estudio</button>
+                    <div class="alert alert-warning" style="margin-top: 1rem;">
+                        <strong>¡Atención!</strong> Los datos de los estudios no se almacenarán hasta que se guarde la
+                        consulta.
                     </div>
 
                 </div><!-- /.box-body-->
@@ -116,7 +121,7 @@
                 <div class="box-footer" style="padding:1rem 5rem;">
                     <button type="submit" id="btnGuardarConsulta" class="btn btn-success btn-lg">Guardar
                         consulta</button>
-                    <button type="button" class="btn btn-normal" id="btnLimpiar" style="margin-left:2rem;">Limpiar
+                    <button type="button" class="btn btn-default" id="btnLimpiar" style="margin-left:2rem;">Limpiar
                         formulario</button>
                 </div><!-- /.box-footer-->
             </form>
