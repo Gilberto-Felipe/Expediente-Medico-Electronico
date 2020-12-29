@@ -1,10 +1,8 @@
 <?php 
 
-  // session_start();
-
+    session_start();
 
 ?>
-
 
 
 <!DOCTYPE html>
@@ -15,7 +13,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Inventory System</title>
+    <title>GHApps ECE</title>
 
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -98,7 +96,7 @@
 
     <?php
 
-  // if (isset($_SESSION['iniciarSesion']) && $_SESSION['iniciarSesion'] == 'ok') {
+  if (isset($_SESSION['iniciarSesion']) && $_SESSION['iniciarSesion'] == 'ok') {
     
     echo '<div class="wrapper">';
 
@@ -136,7 +134,7 @@
 
         }
 
-      }else{
+      } else{
 
         include "modulos/inicio.php";
 
@@ -150,14 +148,13 @@
 
   echo '</div>';
 
-//  }else {
+  } else {
 
-    // include "modulos/login.php";
+    include "modulos/login.php";
 
-//  }
+  }
 
-  ?>
-
+?>
 
     <!-- enlaces a js -->
     <script src="vistas/js/plantilla.js"></script>
