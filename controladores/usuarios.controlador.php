@@ -10,11 +10,11 @@ class ControladorUsuarios {
 
 		if (isset($_POST["ingUsuario"])) {
 			
-			if (preg_match('/^[a-zA-Z0-9]+$/', $_POST["ingUsuario"]) &&
-				preg_match('/^[a-zA-Z0-9]+$/', $_POST["ingPassword"])) {
+			if (filter_var($_POST["ingUsuario"], FILTER_VALIDATE_EMAIL) &&
+				preg_match('/./', $_POST["ingPassword"])) {
 
                 $encriptar = crypt($_POST["ingPassword"], '$2a$07$usesomesillystringforsalt$');
-                //var_dump($encriptar);
+                var_dump($encriptar);
 				
 				$tabla = "usuario";
 
@@ -75,6 +75,10 @@ class ControladorUsuarios {
 					echo '<br><div class="alert alert-danger btnActivar">Error al ingresar. ¡Vuelve a intentarlo!</div>';
 
 				}
+
+			} else{
+
+				echo '<br><div class="alert alert-danger btnActivar">Error: El usuario debe ser un email válido y la contraseña solo puede contener letras y números.</div>';
 
 			}
 

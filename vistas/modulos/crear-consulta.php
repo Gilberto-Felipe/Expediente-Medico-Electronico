@@ -87,7 +87,9 @@
 
             <form role="form" method="post" id="crear-consulta" enctype="multipart/form-data">
                 <div class="box-body" style="padding:1rem 5rem;">
+
                     <input type="hidden" id="id_paciente" name="id_paciente" value="<?php echo $idExpediente;?>">
+                    <input type="hidden" id="id_consulta" name="id_consulta" value="<?php ?>">
 
                     <p class=""><strong>Edad: </strong><?php echo $edad;?></p>
                     <input type="hidden" id="edad" name="edad" value="<?php echo $idExpediente;?>">

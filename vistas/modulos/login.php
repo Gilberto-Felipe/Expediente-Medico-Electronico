@@ -31,30 +31,35 @@
 
             </div>
 
-            <div class="box text-center">
-                <p class="">usuario: admin</p>
-                <p class="">contraseña: 123</p>
+            <div class="box">
+
+                <p>usuario: admin@ghapps.com | contraseña: 123</p>
+                <p>usuario: eperez@gmail.com | contraseña: abc</p> 
+                <p>usuario: marycruz@gmail.com | contraseña: ale</p>
+
             </div>
 
-            <div class="row">
+    </div>
 
-                <div class="col-xs-4">
+    <div class="row">
 
-                    <button type="submit" class="btn btn-primary btn-block btn-flat">Ingresar</button>
+        <div class="col-xs-4">
 
-                </div>
+            <button type="submit" class="btn btn-primary btn-block btn-flat">Ingresar</button>
 
-                <?php 
+        </div>
+
+        <?php 
 
                     $login = new ControladorUsuarios();
                     $login -> ctrIngresoUsuario();
 
                 ?>
 
-            </div>
+    </div>
 
-        </form>
+    </form>
 
-    </div><!-- /.login-box-body -->
+</div><!-- /.login-box-body -->
 
 </div><!-- /.login-box -->
