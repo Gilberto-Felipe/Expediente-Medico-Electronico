@@ -20,22 +20,36 @@ class ControladorConsultas {
 	=============================================*/
     static public function ctrCrearConsulta(){
 
+        // Variables
+        $idPaciente = $idDoctor = $fecha_consulta = $diagnostico = $receta = $estudios_true = "";
+
+        // Función Validar entradas
+        function test_input($data) {
+            $data = trim($data);
+            $data = stripslashes($data);
+            $data = htmlspecialchars($data);
+            return $data;
+          }
+
         // VALIDAR QUE EXISTAN LAS LLAVES PRIMARIAS Y campos importantes
-        if (isset($_POST['id_consulta']) &&
-            isset($_POST['id_paciente']) &&
+        if (isset($_POST['id_paciente']) &&
             isset($_POST['id_doctor']) &&
-            isset($_POST['fecha_consulta']) 
+            isset($_POST['fecha_consulta']) &&
+            //isset($_POST['diagnostico']) &&
+            //isset($_POST['receta']) &&
+            isset($_POST['estudios_true'])
         ){
 
             // SANITIZAR ENTRADAS
-            if (preg_match('/^[0-9]+$/', $_POST['id_consulta']) &&
-                preg_match('/^[0-9]+$/', $_POST['id_paciente']) &&
-                preg_match('/^[0-9]+$/', $_POST['id_doctor'])
-                //preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚüÜ ]+$/', $_POST['diagnostico']) &&
-                // preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚüÜ ]+$/', $_POST['receta'])
+            if (preg_match('/^[0-9]+$/', $_POST['id_paciente']) &&
+                preg_match('/^[0-9]+$/', $_POST['id_doctor']) && 
+                preg_match('/^[0-1]+$/', $_POST['estudios_true'])
             ){
 
-                # ##Falta sanitizar los text tarea por seguridad
+                // ZANITIZAR TEXTATEAS
+                $diagnostico = test_input($_POST['diagnostico']);
+                $receta = test_input($_POST['receta']);
+
 
                 // FORMATEAR FECHAS PARA ENVIAR A BD
                 $fechaConsulta = $_POST['fecha_consulta'];
