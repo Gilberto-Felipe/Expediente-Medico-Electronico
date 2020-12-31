@@ -27,8 +27,6 @@ class ControladorExpedientes {
             isset($_POST['fecha_nacimiento'])
         ){
 
-			echo 
-
             // VALIDAR ENTRADAS
             if (preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚüÜ ]+$/', $_POST['nombre_paciente']) &&
                 preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚüÜ ]+$/', $_POST['apellidop_paciente']) &&

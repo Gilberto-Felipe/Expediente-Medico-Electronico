@@ -50,9 +50,12 @@
     <!-- iCheck for checkboxes and radio inputs -->
     <link rel="stylesheet" href="vistas/plugins/iCheck/all.css">
 
+    <!-- wizard styles.css -->
+    <link rel="stylesheet" href="vistas/css/wizard_style.css">
+
     <!--=====================================
-  =            Plugins js                 =
-  ======================================-->
+     =            Plugins js                 =
+    ======================================-->
 
     <!-- jQuery 3 -->
     <script src="vistas/bower_components/jquery/dist/jquery.min.js"></script>
@@ -160,6 +163,7 @@
     <script src="vistas/js/plantilla.js"></script>
     <script src="vistas/js/expedientes.js"></script>
     <script src="vistas/js/consultas.js"></script>
+    <script src="vistas/js/wizard.js"></script>
 
 </body>
 
