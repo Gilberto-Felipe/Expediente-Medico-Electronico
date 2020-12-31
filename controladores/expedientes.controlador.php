@@ -20,17 +20,19 @@ class ControladorExpedientes {
 	=============================================*/
     static public function ctrCrearExpediente(){
 
-        // VALIDAR QUE EXISTAN LAS LLAVES PRIMARIAS
+        // VALIDAR QUE EXISTAN LOS CAMPOS
         if (isset($_POST['nombre_paciente']) &&
             isset($_POST['apellidop_paciente']) &&
             isset($_POST['apellidom_paciente']) &&
             isset($_POST['fecha_nacimiento'])
         ){
 
+			echo 
+
             // VALIDAR ENTRADAS
-            if (preg_match('/^[a-zA-ZñÑáéíóúÁÉÍÓÚüÜ ]+$/', $_POST['nombre_paciente']) &&
-                preg_match('/^[a-zA-ZñÑáéíóúÁÉÍÓÚüÜ ]+$/', $_POST['apellidop_paciente']) &&
-				preg_match('/^[a-zA-ZñÑáéíóúÁÉÍÓÚüÜ ]+$/', $_POST['apellidom_paciente']) &&
+            if (preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚüÜ ]+$/', $_POST['nombre_paciente']) &&
+                preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚüÜ ]+$/', $_POST['apellidop_paciente']) &&
+				preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚüÜ ]+$/', $_POST['apellidom_paciente']) &&
 				preg_match('/^[0-9\/]+$/', $_POST['fecha_nacimiento']) &&
 				preg_match('/^[0-1]+$/', $_POST['sexo']) &&
 				preg_match('/^[1-3]+$/', $_POST['edo_civil']) &&
@@ -155,26 +157,26 @@ class ControladorExpedientes {
 
 			}
 
-			/*else {
+		}
 
-				echo '<script>
-					swal({
-						type: "error",
-						title: "¡Asegrúrate de llenar todos los campos!",
-						showConfirmButton: true,
-						confirmButtonText: "Cerrar",
-						closeOnConfirm: false						
-				
-					}).then((result)=>{
-						if(result.value){
-							window.location = "crear-expediente";
-						}
-					});
-					</script>';
+		/*else {
+
+			echo '<script>
+				swal({
+					type: "error",
+					title: "¡Asegrúrate de llenar los campos obligatorios!",
+					showConfirmButton: true,
+					confirmButtonText: "Cerrar",
+					closeOnConfirm: false						
+			
+				}).then((result)=>{
+					if(result.value){
+						window.location = "crear-expediente";
+					}
+				});
+				</script>';
 
 			}*/
-
-		}
 			
 	}
 

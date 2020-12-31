@@ -58,7 +58,7 @@
                                                         class="col-sm-4 control-label">Nombre(s)</label>
                                                     <div class="col-sm-8">
                                                         <input type="text" class="form-control" id="nombre_paciente"
-                                                            name="nombre_paciente" placeholder="Juan Ignacio" required>
+                                                            name="nombre_paciente" placeholder="Juan" required>
                                                     </div>
                                                 </div>
 
@@ -67,7 +67,7 @@
                                                         paterno</label>
                                                     <div class="col-sm-8">
                                                         <input type="text" class="form-control" id="apellidop_paciente"
-                                                            name="apellidop_paciente" placeholder="Guzmán" required>
+                                                            name="apellidop_paciente" placeholder="Pérez" required>
                                                     </div>
                                                 </div>
 
@@ -76,7 +76,7 @@
                                                         materno</label>
                                                     <div class="col-sm-8">
                                                         <input type="text" class="form-control" id="apellidom_paciente"
-                                                            name="apellidom_paciente" placeholder="Lupercio" required>
+                                                            name="apellidom_paciente" placeholder="González" required>
                                                     </div>
                                                 </div>
 
@@ -127,7 +127,7 @@
                                                     <label for="email_paciente" class="col-sm-4 control-label">Email</label>
                                                     <div class="col-sm-8">
                                                         <input type="email" class="form-control" id="email_paciente"
-                                                            name="email_paciente" placeholder="jlupercio@gmail.com">
+                                                            name="email_paciente" placeholder="jperez@gmail.com">
                                                     </div>
                                                 </div>
 
@@ -146,7 +146,7 @@
                                                         class="col-sm-4 control-label">Dirección</label>
                                                     <div class="col-sm-8">
                                                         <input type="text" class="form-control" id="direccion_paciente"
-                                                            name="direccion_paciente" placeholder="x1,y1" required>
+                                                            name="direccion_paciente" placeholder="Avenida Universidad 333, Colima" required>
                                                     </div>
                                                 </div>
 
@@ -253,7 +253,7 @@
                                                         covertura</label>
                                                     <div class="col-sm-8">
                                                         <input type="text" class="form-control" id="tipo_covertura"
-                                                            name="tipo_covertura" placeholder="Alta: $ 200,000 M.N."
+                                                            name="tipo_covertura" placeholder="Alta: $ 1,000,000 M.N."
                                                             required>
                                                     </div>
                                                 </div>
@@ -299,7 +299,7 @@
 
                                                     <div class="col-sm-8">
                                                         <input type="text" class="form-control" id="apellidop_contacto"
-                                                            name="apellidop_contacto" placeholder="Guzmán" required>
+                                                            name="apellidop_contacto" placeholder="Pérez" required>
                                                     </div>
                                                 </div>
 
@@ -343,7 +343,7 @@
                                                     <label for="email_contacto" class="col-sm-4 control-label">Email</label>
                                                     <div class="col-sm-8">
                                                         <input type="email" class="form-control" id="email_contacto"
-                                                            name="email_contacto" placeholder="jjesus_lupercio@gmail.com">
+                                                            name="email_contacto" placeholder="jjesus_perez@gmail.com">
                                                     </div>
                                                 </div>
 
