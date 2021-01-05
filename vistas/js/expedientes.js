@@ -137,3 +137,4 @@ $("#irVerExpediente").click(function(event) {
 		window.location = "index.php?ruta=consultas&idExpediente="+idExpediente;
 	}
 });
+

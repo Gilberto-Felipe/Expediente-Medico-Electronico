@@ -2,6 +2,7 @@
 
 # Controladores
 require_once "controladores/plantilla.controlador.php";
+require_once "controladores/funciones.controlador.php";
 require_once "controladores/usuarios.controlador.php";
 require_once "controladores/expedientes.controlador.php";
 require_once "controladores/consultas.controlador.php";

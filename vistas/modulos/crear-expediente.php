@@ -55,39 +55,42 @@
                         <div class="panel-body">
 
                             <div class="form-group">
-                                <label class="control-label" for="nombre_paciente">Nombre</label>
+                                <label class="control-label" for="nombre_paciente">Nombre(s)<span
+                                        class="error">*</span></span></label>
                                 <input type="text" class="form-control" id="nombre_paciente" name="nombre_paciente"
                                     maxlength="100" placeholder="Juan" required>
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label" for="apellidop_paciente">Apellido paterno</label>
+                                <label class="control-label" for="apellidop_paciente">Apellido paterno<span
+                                        class="error">*</span></label>
                                 <input type="text" class="form-control" id="apellidop_paciente"
                                     name="apellidop_paciente" placeholder="Pérez" maxlength="100" required>
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label" for="apellidom_paciente">Apellido materno</label>
+                                <label class="control-label" for="apellidom_paciente">Apellido materno<span
+                                        class="error">*</span></label>
                                 <input type="text" class="form-control" id="apellidom_paciente"
                                     name="apellidom_paciente" placeholder="González" maxlength="100" required>
                             </div>
 
                             <div class="form-group">
-                                <label for="fecha_nacimiento" class="control-label">Fecha nacimiento</label>
+                                <label for="fecha_nacimiento" class="control-label">Fecha nacimiento<span
+                                        class="error">*</span></label>
                                 <input type="text" id="fecha_nacimiento" name="fecha_nacimiento" required
                                     class="form-control fechas" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask>
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label" style="margin-right:4rem;">Sexo: </label>
-                                <label style="margin-right:4rem;"><input type="radio" name="sexo" id="mujer"
-                                        class="minimal" value="0" required>Mujer</label>
-                                <label style="margin-right:4rem;"><input type="radio" name="sexo" id="hombre"
-                                        class="minimal" value="1">Hombre</label>
+                                <strong style="margin-right:2rem;">Sexo:<span class="error">*</span></strong>
+                                <input type="radio" name="sexo" id="mujer" value="1" required> Mujer
+                                <input type="radio" name="sexo" id="hombre" value="2"> Hombre
                             </div><!-- /.form-group radio-buttons -->
 
                             <div class="form-group">
-                                <label for="edo_civil" class="control-label">Estado civil</label>
+                                <label for="edo_civil" class="control-label">Estado civil<span
+                                        class="error">*</span></label>
                                 <select class="form-control" id="edo_civil" name="edo_civil" required>
                                     <option value="">-- Elige una opción --</option>
                                     <option value="1">Soltero/a</option>
@@ -103,13 +106,15 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="tel_paciente" class="control-label">Teléfono</label>
+                                <label for="tel_paciente" class="control-label">Teléfono<span
+                                        class="error">*</span></label>
                                 <input type="tel" class="form-control tel_mask" id="tel_paciente" name="tel_paciente"
                                     data-inputmask="'mask': '(999) 999-9999'" data-mask required>
                             </div>
 
                             <div class="form-group">
-                                <label for="direccion_paciente" class="control-label">Dirección</label>
+                                <label for="direccion_paciente" class="control-label">Dirección<span
+                                        class="error">*</span></label>
                                 <input type="text" class="form-control" id="direccion_paciente"
                                     name="direccion_paciente" placeholder="Avenida Universidad 333, Colima" required>
                             </div>
@@ -126,7 +131,8 @@
                         <div class="panel-body">
 
                             <div class="form-group">
-                                <label for="tipo_sangre" class="control-label">Tipo de sangre</label>
+                                <label for="tipo_sangre" class="control-label">Tipo de sangre<span
+                                        class="error">*</span></label>
                                 <select class="form-control" id="tipo_sangre" name="tipo_sangre" required>
                                     <option value="">-- Selecciona tipo sangre --</option>
                                     <option value="1">A+</option>
@@ -174,32 +180,39 @@
                         <div class="panel-body">
 
                             <div class="form-group">
-                                <label for="num_seguro" class="control-label">Número
-                                    seguro</label>
-                                <input type="text" class="form-control" id="num_seguro" name="num_seguro"
-                                    placeholder="00001280" required>
-                            </div>
+                                <button type="button" class="btn btn-info" data-toggle="collapse"
+                                    data-target="#seguro">Seguro
+                                    médico</button>
+                                <div id="seguro" class="collapse" style="padding-top:1rem;">
+                                    <div class="form-group">
+                                        <label for="num_seguro" class="control-label">Número
+                                            seguro</label>
+                                        <input type="text" class="form-control" id="num_seguro" name="num_seguro"
+                                            placeholder="00001280">
+                                    </div>
 
-                            <div class="form-group">
-                                <label for="aseguradora" class="control-label">Aseguradora</label>
-                                <input type="text" class="form-control" id="aseguradora" name="aseguradora"
-                                    placeholder="Seguros Potosí" required>
-                            </div>
+                                    <div class="form-group">
+                                        <label for="aseguradora" class="control-label">Aseguradora</label>
+                                        <input type="text" class="form-control" id="aseguradora" name="aseguradora"
+                                            placeholder="Seguros Potosí">
+                                    </div>
 
-                            <div class="form-group">
-                                <label for="tipo_covertura" class="control-label">Tipo de
-                                    covertura</label>
-                                <input type="text" class="form-control" id="tipo_covertura" name="tipo_covertura"
-                                    placeholder="Alta: $ 1,000,000 M.N." required>
-                            </div>
+                                    <div class="form-group">
+                                        <label for="tipo_covertura" class="control-label">Tipo de
+                                            covertura</label>
+                                        <input type="text" class="form-control" id="tipo_covertura"
+                                            name="tipo_covertura" placeholder="Alta: $ 1,000,000 M.N.">
+                                    </div>
 
-                            <div class="form-group">
-                                <label for="fecha_vencimiento" class="control-label">Fecha
-                                    vencimiento</label>
-                                <input type="text" id="fecha_vencimiento" name="fecha_vencimiento"
-                                    class="form-control fechas" required data-inputmask="'alias': 'dd/mm/yyyy'"
-                                    data-mask>
-                            </div><!-- /.form-group -->
+                                    <div class="form-group">
+                                        <label for="fecha_vencimiento" class="control-label">Fecha
+                                            vencimiento</label>
+                                        <input type="text" id="fecha_vencimiento" name="fecha_vencimiento"
+                                            class="form-control fechas" data-inputmask="'alias': 'dd/mm/yyyy'"
+                                            data-mask>
+                                    </div>
+                                </div>
+                            </div>
 
                             <button class="btn btn-primary nextBtn pull-right" type="button">Siguiente</button>
                         </div>
@@ -212,51 +225,59 @@
                         <div class="panel-body">
 
                             <div class="form-group">
-                                <label for="nombre_contacto" class="control-label">Nombre(s)</label>
-                                <input type="text" class="form-control" id="nombre_contacto" name="nombre_contacto"
-                                    placeholder="José de Jesús" required>
+                                <button type="button" class="btn btn-info" data-toggle="collapse"
+                                    data-target="#contacto">Persona de
+                                    contacto</button>
+                                <div id="contacto" class="collapse" style="padding-top:1rem;">
+                                    <div class="form-group">
+                                        <label for="nombre_contacto" class="control-label">Nombre(s)</label>
+                                        <input type="text" class="form-control" id="nombre_contacto"
+                                            name="nombre_contacto" placeholder="José de Jesús">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="apellidop_contacto" class="control-label">Apellido
+                                            paterno</label>
+                                        <input type="text" class="form-control" id="apellidop_contacto"
+                                            name="apellidop_contacto" placeholder="Pérez">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="apellidom_contacto" class="control-label">Apellido
+                                            materno</label>
+                                        <input type="text" class="form-control" id="apellidom_contacto"
+                                            name="apellidom_contacto" placeholder="Lupercio">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="parentesco" class="control-label">Parentesco</label>
+                                        <select class="form-control" id="parentesco" name="parentesco">
+                                            <option value="">-- Elige una opción --</option>
+                                            <option value="1">Padre/madre</option>
+                                            <option value="2">Hermano/a</option>
+                                            <option value="3">Cónyuge/pareja</option>
+                                            <option value="4">Hijo/a</option>
+                                            <option value="5">Otro</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="tel_contacto" class="control-label">Teléfono</label>
+                                        <input type="tel" class="form-control tel_mask" id="tel_contacto"
+                                            name="tel_contacto" data-inputmask="'mask': '(999) 999-9999'" data-mask>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="email_contacto" class="control-label">Email</label>
+                                        <input type="email" class="form-control" id="email_contacto"
+                                            name="email_contacto" placeholder="jjesus_perez@gmail.com">
+                                    </div>
+                                </div>
                             </div>
 
-                            <div class="form-group">
-                                <label for="apellidop_contacto" class="control-label">Apellido
-                                    paterno</label>
-                                <input type="text" class="form-control" id="apellidop_contacto"
-                                    name="apellidop_contacto" placeholder="Pérez" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="apellidom_contacto" class="control-label">Apellido
-                                    materno</label>
-                                <input type="text" class="form-control" id="apellidom_contacto"
-                                    name="apellidom_contacto" placeholder="Lupercio" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="parentesco" class="control-label">Parentesco</label>
-                                <select class="form-control" id="parentesco" name="parentesco" required>
-                                    <option value="">-- Elige una opción --</option>
-                                    <option value="1">Padre/madre</option>
-                                    <option value="2">Hermano/a</option>
-                                    <option value="3">Cónyuge/pareja</option>
-                                    <option value="4">Hijo/a</option>
-                                    <option value="5">Otro</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="tel_contacto" class="control-label">Teléfono</label>
-                                <input type="tel" class="form-control tel_mask" id="tel_contacto" name="tel_contacto"
-                                    data-inputmask="'mask': '(999) 999-9999'" data-mask required>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="email_contacto" class="control-label">Email</label>
-                                <input type="email" class="form-control" id="email_contacto" name="email_contacto"
-                                    placeholder="jjesus_perez@gmail.com">
-                            </div>
-
-                            <button class="btn btn-success pull-right" type="submit">Crear
+                            <button class="btn btn-lg btn-success pull-right" type="submit">Crear
                                 expediente</button>
+
                         </div>
                     </div>
                 </form>

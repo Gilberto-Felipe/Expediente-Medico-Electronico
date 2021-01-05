@@ -20,18 +20,7 @@ class ControladorConsultas {
 	=============================================*/
     static public function ctrCrearConsulta(){
 
-        // Variables
-        $idPaciente = $idDoctor = $fecha_consulta = $diagnostico = $receta = $estudios_true = "";
-
-        // Función Validar entradas
-        function test_input($data) {
-            $data = trim($data);
-            $data = stripslashes($data);
-            $data = htmlspecialchars($data);
-            return $data;
-          }
-
-        // VALIDAR QUE EXISTAN LAS LLAVES PRIMARIAS Y campos importantes
+        // VALIDAR QUE EXISTAN LAS VARIABLES
         if (isset($_POST['id_paciente']) &&
             isset($_POST['id_doctor']) &&
             isset($_POST['fecha_consulta']) &&
