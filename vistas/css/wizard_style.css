@@ -50,6 +50,6 @@
 }
 
 /*Estilos propios*/
-label > span.error {
+span.error {
     color: red !important;
 }

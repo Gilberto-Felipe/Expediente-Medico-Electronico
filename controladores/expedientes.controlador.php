@@ -28,7 +28,7 @@ class ControladorExpedientes {
 
 		if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-			// Validar datos generales 
+			// Validar Datos generales
 			
 			if (empty($_POST["nombre_paciente"])) {
 				$nombrePacienteErr = "Este campo es obligatorio";
@@ -114,8 +114,7 @@ class ControladorExpedientes {
 			} else {
 				$direccionPaciente = ControladorFunciones::ctrValidar($_POST['direccion_paciente']);
 			}
-
-
+			
 			// Validar Datos médicos
 
 			if (empty($_POST["tipo_sangre"])) {
@@ -145,7 +144,7 @@ class ControladorExpedientes {
 			if (isset($_POST['aseguradora'])) {
 				$aseguradora = ControladorFunciones::ctrValidar($_POST['aseguradora']);
 				// check if numSeguro
-				if (!preg_match("/^[a-zA-Z0-9]*$/",$aseguradora)) {
+				if (!preg_match("/^[a-zA-Z0-9 ]*$/",$aseguradora)) {
 					$aseguradoraErr = "Solo se permiten letras y números";
 			  	}
 			}
@@ -190,7 +189,7 @@ class ControladorExpedientes {
 				$parentesco = ControladorFunciones::ctrValidar($_POST['parentesco']);
 				// check parentesco
 				if (!preg_match("/^[1-5]*$/",$parentesco)) {
-					$parentescoErr = "Solo se permiten letras y números";
+					$parentescoErr = "Solo se permiten números";
 			  	}
 			}
 
@@ -204,26 +203,22 @@ class ControladorExpedientes {
 
 			if (isset($_POST['email_contacto'])) {
 				$emailContacto = ControladorFunciones::ctrValidar($_POST['email_contacto']);
-				// check a valid telefono
+				// check a valid email
 				if (!filter_var($emailContacto, FILTER_VALIDATE_EMAIL)) {
 					$emailContactoErr = "Formato de email inválido";
 				}
 			}
 
-			/*
-			$nombrePaciente = $apellidoPpaciente = $apellidoMpaciente = $fechaNacimiento = $sexo = $edoCivil = $emailPaciente = $telPaciente = $direccionPaciente = $tipoSangre = $alergias = $antecedentesMed = $antecedentesFam = $numSeguro = $aseguradora = $tipoCovertura = $fechaVencimiento = $nombreContacto = $apellidopContacto = $apellidomContacto = $parentesco = $telContacto = $emailContacto = "";
-			*/
-
 			// echo "HAAAAAAAAAAAAAAYYYYYY ".$nombrePaciente." ".$apellidoPpaciente." ".$apellidoMpaciente." ".$fechaNacimiento;
 
 			// FORMATEAR FECHAS PARA ENVIAR A BD
-			$fecha_nacimiento = $_POST['fecha_nacimiento'];
-			$fecha_nacimiento = str_replace('/', '-', $fecha_nacimiento);
-			$fecha_nacimiento = date('Y-m-d', strtotime($fecha_nacimiento));
+			$fechaNacimiento = $_POST['fecha_nacimiento'];
+			$fechaNacimiento = str_replace('/', '-', $fechaNacimiento);
+			$fechaNacimiento = date('Y-m-d', strtotime($fechaNacimiento));
 
-			$fecha_vencimiento = $_POST['fecha_vencimiento'];
-			$fecha_vencimiento = str_replace('/', '-', $fecha_vencimiento);
-			$fecha_vencimiento = date('Y-m-d', strtotime($fecha_vencimiento));
+			$fechaVencimiento = $_POST['fecha_vencimiento'];
+			$fechaVencimiento = str_replace('/', '-', $fechaVencimiento);
+			$fechaVencimiento = date('Y-m-d', strtotime($fechaVencimiento));
 			
 			// ENVIAR DATOS AL MODELO
 			$tabla = 'paciente';
@@ -244,53 +239,51 @@ class ControladorExpedientes {
 				'domicilio' => $direccionPaciente
 			);
 
+			// var_dump($datos);
 
-			var_dump($datos);
-
-		}
-
-			
-			
-			// COMPROBAR QUE SE HAYA HECHO EL REGISTRO
-			/*$respuesta = ModeloExpedientes::mdlCrearExpediente($tabla, $datos);
+			$respuesta = ModeloExpedientes::mdlCrearExpediente($tabla, $datos);
 
 			if ($respuesta == "ok") {
 
 				// OBTENER EL ÚLTIMO ID DE PACIENTES
-				$last_id = ModeloExpedientes::mdlUltimoID();
-				// var_dump($last_id[0]);
-				$last_id = implode($last_id[0]);
-				$last_id = substr($last_id, -2);
-				// echo $last_id;
-
+				$lastId = ModeloExpedientes::mdlUltimoID();
+				$lastID = $lastId[0][0];
+				// echo $lastID;
+				
 				$tabla2 = 'seguro_medico';
 
 				$datos2 = array(
-					'paciente_id_paciente' => $last_id,
-					'num_seguro' => $_POST['num_seguro'],
-					'aseguradora' => $_POST['aseguradora'],
-					'tipo_covertura' => $_POST['tipo_covertura'],
-					'fecha_vencimiento' => $fecha_vencimiento
+					'paciente_id_paciente' => $lastID,
+					'num_seguro' => $numSeguro,
+					'aseguradora' => $aseguradora,
+					'tipo_covertura' => $tipoCovertura,
+					'fecha_vencimiento' => $fechaVencimiento
 				);
 
+				// var_dump($datos2);
+
 				$respuesta2 = ModeloExpedientes::mdlRegistrarSeguro($tabla2, $datos2);
-				//var_dump($respuesta2);
+				// var_dump($respuesta2);
 
 				$tabla3 = 'contacto';
 
 				$datos3 = array(
-					'paciente_id_paciente' => $last_id,
-					'nombre_contacto' => $_POST['nombre_contacto'],
-					'apellidop_contacto' => $_POST['apellidop_contacto'],
-					'apellidom_contacto' => $_POST['apellidom_contacto'],
-					'relacion_paciente' => $_POST['parentesco'],
-					'telefono' => $_POST['tel_contacto'],
-					'email_contacto' => $email_contacto
+					'paciente_id_paciente' => $lastID,
+					'nombre_contacto' => $nombreContacto,
+					'apellidop_contacto' => $apellidopContacto,
+					'apellidom_contacto' => $apellidomContacto,
+					'relacion_paciente' => $parentesco,
+					'telefono' => $telContacto,
+					'email_contacto' => $emailContacto
 				);
 
-				$respuesta3 = ModeloExpedientes::mdlRegistrarContacto($tabla3, $datos3);
-				//var_dump($respuesta3);
+				var_dump($datos3);
 
+				$respuesta3 = ModeloExpedientes::mdlRegistrarContacto($tabla3, $datos3);
+				
+				return var_dump($respuesta3);
+
+				/*
 				echo '<script>
 					swal({
 						type: "success",
@@ -305,9 +298,14 @@ class ControladorExpedientes {
 						}
 					});
 				</script>';
+				*/
+			}
 
-			}*/
 
+		}
+
+			
+			
 
 
 		/*else {

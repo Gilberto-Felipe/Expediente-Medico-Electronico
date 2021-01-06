@@ -138,3 +138,48 @@ $("#irVerExpediente").click(function(event) {
 	}
 });
 
+/*=============================================
+Poner atributos required a campos del formulario 
+crear-expediente sección seguro médico
+=============================================*/
+
+function setInputRequired(id) {
+	id = $(`#${id}`);
+	if (id.prop('required')) {
+		id.prop('required', false);
+		console.log(id,id.attr('required'));
+	} else {
+		id.prop('required', true);
+		console.log(id,id.attr('required'));		
+	}
+}
+
+$( "#btn_show_seguro" ).click(function(){
+
+	setInputRequired("num_seguro");
+	setInputRequired("aseguradora");
+	setInputRequired("tipo_covertura");
+	setInputRequired("fecha_vencimiento");
+
+});
+
+$( "#btn_show_pcontacto" ).click(function(){
+
+	setInputRequired("nombre_contacto");
+	setInputRequired("apellidop_contacto");
+	setInputRequired("apellidom_contacto");
+	setInputRequired("parentesco");
+	setInputRequired("tel_contacto");
+
+});
+
+/*=============================================
+Poner atributos required a radio button sexo
+crear-expediente
+=============================================*/
+$('#mujer').prop('required',true);
+if ($('#mujer').prop('required')){
+	console.log(true)
+} else {
+	console.log(false)
+}

@@ -74,6 +74,7 @@ class ModeloExpedientes {
 		}
 
 		$stmt->close();
+		
 		$stmt = null;
 
 	}
@@ -99,6 +100,7 @@ class ModeloExpedientes {
 		}
 
 		$stmt->close();
+		
 		$stmt = null;
 	}
 
@@ -128,6 +130,7 @@ class ModeloExpedientes {
 		}
 
 		$stmt->close();
+
 		$stmt = null;
 	}
 
@@ -137,10 +140,12 @@ class ModeloExpedientes {
 	static public function mdlRegistrarContacto($tabla3, $datos3){
 
 		$stmt = Conexion::conectar()->prepare(
-			"INSERT INTO $tabla3(paciente_id_paciente, nombre_contacto, apellidop_contacto, apellidom_contacto, 
-			relacion_paciente, telefono, email_contacto) 
-			VALUES (:id_paciente, :nombre_contacto, :apellidop_contacto, :apellidom_contacto, 
-			:relacion_paciente, :telefono, :email_contacto)");
+			"INSERT INTO $tabla3(
+				paciente_id_paciente, nombre_contacto, apellidop_contacto, apellidom_contacto, 
+				relacion_paciente, telefono, email_contacto) 
+			VALUES (
+				:id_paciente, :nombre_contacto, :apellidop_contacto, :apellidom_contacto, 
+				:relacion_paciente, :telefono, :email_contacto)");
 
 		$stmt->bindParam(":id_paciente", $datos3["paciente_id_paciente"], PDO::PARAM_INT);
 		$stmt->bindParam(":nombre_contacto", $datos3["nombre_contacto"], PDO::PARAM_STR);
@@ -161,6 +166,7 @@ class ModeloExpedientes {
 		}
 
 		$stmt->close();
+
 		$stmt = null;
 	}
 

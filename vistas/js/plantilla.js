@@ -47,7 +47,7 @@ INPUT-MASKS
 //Datemask dd/mm/yyyy
 $('.fechas').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' });
 //Telephone US mask
-$('.tel_mask').inputmask(); 
+$('.tel-mask').inputmask('(999) 999-9999', { 'placeholder': '(999) 999-9999' }); 
 
 
 /*=============================================
@@ -57,8 +57,7 @@ ICHECK ESTILOS PARA SELECTORES Y BOTONES RADIO
  $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
 	checkboxClass: 'icheckbox_minimal-blue',
 	radioClass   : 'iradio_minimal-blue'
-  })
-
+  });
 
 
 /*=============================================
@@ -73,7 +72,6 @@ Limpiar formulario
 $("#btnLimpiar").click(function(event) {
 	let idFormulario = $("form").attr("id");
 	//console.log(idFormulario);
-
 	$(`#${idFormulario}`)[0].reset();
 });
 

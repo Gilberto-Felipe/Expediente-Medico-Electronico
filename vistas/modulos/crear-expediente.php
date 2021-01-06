@@ -55,8 +55,8 @@
                         <div class="panel-body">
 
                             <div class="form-group">
-                                <label class="control-label" for="nombre_paciente">Nombre(s)<span
-                                        class="error">*</span></span></label>
+                                <label class="control-label" for="nombre_paciente">Nombre(s)<span class="error">*
+                                    </span></label>
                                 <input type="text" class="form-control" id="nombre_paciente" name="nombre_paciente"
                                     maxlength="100" placeholder="Juan" required>
                             </div>
@@ -79,20 +79,23 @@
                                 <label for="fecha_nacimiento" class="control-label">Fecha nacimiento<span
                                         class="error">*</span></label>
                                 <input type="text" id="fecha_nacimiento" name="fecha_nacimiento" required
-                                    class="form-control fechas" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask>
+                                    class="form-control fechas">
                             </div>
 
                             <div class="form-group">
-                                <strong style="margin-right:2rem;">Sexo:<span class="error">*</span></strong>
-                                <input type="radio" name="sexo" id="mujer" value="1" required> Mujer
-                                <input type="radio" name="sexo" id="hombre" value="2"> Hombre
+                                <label class="control-label" style="margin-right:2rem;">Sexo<span
+                                        class="error">*</span></label>
+                                <label style="margin-right: 2rem;"><input type="radio" class="minimal" name="sexo"
+                                        id="mujer" value="1" required> Mujer</label>
+                                <label><input type="radio" class="minimal" name="sexo" id="hombre" value="2">
+                                    Hombre</label>
                             </div><!-- /.form-group radio-buttons -->
 
                             <div class="form-group">
                                 <label for="edo_civil" class="control-label">Estado civil<span
                                         class="error">*</span></label>
                                 <select class="form-control" id="edo_civil" name="edo_civil" required>
-                                    <option value="">-- Elige una opción --</option>
+                                    <option value="">--Elige una opción--</option>
                                     <option value="1">Soltero/a</option>
                                     <option value="2">Casado/a</option>
                                     <option value="3">Viudo/a</option>
@@ -100,16 +103,16 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="email_paciente" class="control-label">Email</label>
-                                <input type="email" class="form-control" id="email_paciente" name="email_paciente"
-                                    placeholder="jperez@gmail.com">
+                                <label for="tel_paciente" class="control-label">Teléfono<span
+                                        class="error">*</span></label>
+                                <input type="text" class="form-control tel-mask" id="tel_paciente" name="tel_paciente"
+                                    required>
                             </div>
 
                             <div class="form-group">
-                                <label for="tel_paciente" class="control-label">Teléfono<span
-                                        class="error">*</span></label>
-                                <input type="tel" class="form-control tel_mask" id="tel_paciente" name="tel_paciente"
-                                    data-inputmask="'mask': '(999) 999-9999'" data-mask required>
+                                <label for="email_paciente" class="control-label">Email</label>
+                                <input type="email" class="form-control" id="email_paciente" name="email_paciente"
+                                    placeholder="jperez@gmail.com">
                             </div>
 
                             <div class="form-group">
@@ -180,33 +183,34 @@
                         <div class="panel-body">
 
                             <div class="form-group">
-                                <button type="button" class="btn btn-info" data-toggle="collapse"
+                                <button type="button" id="btn_show_seguro" class="btn btn-info" data-toggle="collapse"
                                     data-target="#seguro">Seguro
                                     médico</button>
                                 <div id="seguro" class="collapse" style="padding-top:1rem;">
                                     <div class="form-group">
                                         <label for="num_seguro" class="control-label">Número
-                                            seguro</label>
+                                            seguro<span class="error">*</span></label>
                                         <input type="text" class="form-control" id="num_seguro" name="num_seguro"
                                             placeholder="00001280">
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="aseguradora" class="control-label">Aseguradora</label>
+                                        <label for="aseguradora" class="control-label">Aseguradora<span
+                                                class="error">*</span></label>
                                         <input type="text" class="form-control" id="aseguradora" name="aseguradora"
                                             placeholder="Seguros Potosí">
                                     </div>
 
                                     <div class="form-group">
                                         <label for="tipo_covertura" class="control-label">Tipo de
-                                            covertura</label>
+                                            covertura<span class="error">*</span></label>
                                         <input type="text" class="form-control" id="tipo_covertura"
                                             name="tipo_covertura" placeholder="Alta: $ 1,000,000 M.N.">
                                     </div>
 
                                     <div class="form-group">
                                         <label for="fecha_vencimiento" class="control-label">Fecha
-                                            vencimiento</label>
+                                            vencimiento<span class="error">*</span></label>
                                         <input type="text" id="fecha_vencimiento" name="fecha_vencimiento"
                                             class="form-control fechas" data-inputmask="'alias': 'dd/mm/yyyy'"
                                             data-mask>
@@ -225,32 +229,34 @@
                         <div class="panel-body">
 
                             <div class="form-group">
-                                <button type="button" class="btn btn-info" data-toggle="collapse"
-                                    data-target="#contacto">Persona de
+                                <button type="button" id="btn_show_pcontacto" class="btn btn-info"
+                                    data-toggle="collapse" data-target="#contacto">Persona de
                                     contacto</button>
                                 <div id="contacto" class="collapse" style="padding-top:1rem;">
                                     <div class="form-group">
-                                        <label for="nombre_contacto" class="control-label">Nombre(s)</label>
+                                        <label for="nombre_contacto" class="control-label">Nombre(s)<span
+                                                class="error">*</span></label>
                                         <input type="text" class="form-control" id="nombre_contacto"
                                             name="nombre_contacto" placeholder="José de Jesús">
                                     </div>
 
                                     <div class="form-group">
                                         <label for="apellidop_contacto" class="control-label">Apellido
-                                            paterno</label>
+                                            paterno<span class="error">*</span></label>
                                         <input type="text" class="form-control" id="apellidop_contacto"
                                             name="apellidop_contacto" placeholder="Pérez">
                                     </div>
 
                                     <div class="form-group">
                                         <label for="apellidom_contacto" class="control-label">Apellido
-                                            materno</label>
+                                            materno<span class="error">*</span></label>
                                         <input type="text" class="form-control" id="apellidom_contacto"
                                             name="apellidom_contacto" placeholder="Lupercio">
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="parentesco" class="control-label">Parentesco</label>
+                                        <label for="parentesco" class="control-label">Parentesco<span
+                                                class="error">*</span></label>
                                         <select class="form-control" id="parentesco" name="parentesco">
                                             <option value="">-- Elige una opción --</option>
                                             <option value="1">Padre/madre</option>
@@ -262,9 +268,10 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="tel_contacto" class="control-label">Teléfono</label>
-                                        <input type="tel" class="form-control tel_mask" id="tel_contacto"
-                                            name="tel_contacto" data-inputmask="'mask': '(999) 999-9999'" data-mask>
+                                        <label for="tel_contacto" class="control-label">Teléfono<span
+                                                class="error">*</span></label>
+                                        <input type="text" class="form-control tel-mask" id="tel_contacto"
+                                            name="tel_contacto">
                                     </div>
 
                                     <div class="form-group">
