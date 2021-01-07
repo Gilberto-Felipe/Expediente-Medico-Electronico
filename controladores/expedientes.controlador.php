@@ -250,7 +250,7 @@ class ControladorExpedientes {
 				$lastID = $lastId[0][0];
 				// echo $lastID;
 				
-				$tabla2 = 'seguro_medico';
+				$tabla2 = 'seguro';
 
 				$datos2 = array(
 					'paciente_id_paciente' => $lastID,
@@ -263,7 +263,7 @@ class ControladorExpedientes {
 				// var_dump($datos2);
 
 				$respuesta2 = ModeloExpedientes::mdlRegistrarSeguro($tabla2, $datos2);
-				// var_dump($respuesta2);
+				var_dump($respuesta2);
 
 				$tabla3 = 'contacto';
 
@@ -281,9 +281,8 @@ class ControladorExpedientes {
 
 				$respuesta3 = ModeloExpedientes::mdlRegistrarContacto($tabla3, $datos3);
 				
-				return var_dump($respuesta3);
+				var_dump($respuesta3);
 
-				/*
 				echo '<script>
 					swal({
 						type: "success",
@@ -298,7 +297,7 @@ class ControladorExpedientes {
 						}
 					});
 				</script>';
-				*/
+
 			}
 
 
