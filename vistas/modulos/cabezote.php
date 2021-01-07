@@ -1,49 +1,49 @@
 <header class="main-header">
 
-	<!--=====================================
+    <!--=====================================
 	=            LOGOTIPO		          	=
 	======================================-->
-	
-	<a href="inicio" class="logo">
-		
-		<!-- logo mini -->
-		<span class="logo-mini">
-			
-			<img src="vistas/img/plantilla/icono-blanco.png" class="img-responsive" style="padding:10px" alt="logo empresa">
 
-		</span>
+    <a href="inicio" class="logo">
 
-		<!-- logo normal -->
-		<span class="logo-lg">
-			
-			<img src="vistas/img/plantilla/logo-blanco-lineal.png" class="img-responsive" style="padding:10px 0px" alt="logo empresa">
+        <!-- logo mini -->
+        <span class="logo-mini">
 
-		</span>
-			
-	</a>
-	
-	<!--=====================================
+            <i class="fa fa-plus-square" style="color:#ffffff;font-size:2.5rem;"></i>
+
+        </span>
+
+        <!-- logo normal -->
+        <span class="logo-lg">
+
+            <img src="vistas/img/plantilla/ghapps_logo.png" class="img-responsive" style="max-width:50%; padding:10px 0px;" alt="logo empresa">
+
+        </span>
+
+    </a>
+
+    <!--=====================================
 	=          	BARRA DE NAVEGACION       	=
 	======================================-->
 
-	<nav class="navbar navbar-static-top" role="navigation">
-		<!-- Botón de navegacion -->
-		<a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+    <nav class="navbar navbar-static-top" role="navigation">
+        <!-- Botón de navegacion -->
+        <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
 
-		    <span class="sr-only">Toggle navigation</span>
+            <span class="sr-only">Toggle navigation</span>
 
-      	</a>
+        </a>
 
-      	<!-- perfil de usuario -->
-      	<div class="navbar-custom-menu">
-      		
-			<ul class="nav navbar-nav">
-				
-				<li class="dropdown user user-menu">
-					
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        <!-- perfil de usuario -->
+        <div class="navbar-custom-menu">
 
-						<?php 
+            <ul class="nav navbar-nav">
+
+                <li class="dropdown user user-menu">
+
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+
+                        <?php 
 
 							//if ($_SESSION['foto'] != "") {
 								
@@ -63,33 +63,33 @@
 
 							// }
 
-						 ?>					
+						 ?>
 
-						<span class="hidden-xs"></span>
+                        <span class="hidden-xs"></span>
 
-					</a>
+                    </a>
 
-			      	<!-- Dropdown-toggle -->
-			      	<ul class="dropdown-menu">
-			      		
-						<li class="user-body">
-							
-							<div class="pull-right">
-								
-								<a href="salir" class="btn btn-default btn-flat">Salir</a>
+                    <!-- Dropdown-toggle -->
+                    <ul class="dropdown-menu">
 
-							</div>
+                        <li class="user-body">
 
-						</li>
-						
-			      	</ul>
+                            <div class="pull-right">
 
-				</li>
+                                <a href="salir" class="btn btn-default btn-flat">Salir</a>
 
-			</ul>
+                            </div>
 
-      	</div>
+                        </li>
 
-	</nav>
-	
+                    </ul>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </nav>
+
 </header>
