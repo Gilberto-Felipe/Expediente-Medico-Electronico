@@ -289,13 +289,13 @@
                     </div>
                 </form>
 
-                <?php 
+<?php 
 
     $crearExpediente = new ControladorExpedientes();
     $crearExpediente -> ctrCrearExpediente();
 
 ?>
-            </div> <!-- /.box -->
-        </div><!-- /.box-header -->
+            </div> <!-- /.box-header -->
+        </div><!-- /.box -->
     </section><!-- /.content -->
 </div><!-- /.content-wrapper -->

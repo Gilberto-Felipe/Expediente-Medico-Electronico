@@ -4,14 +4,13 @@
 
     <div class="login-logo">
 
-        <img src="vistas/img/plantilla/logo_lorofan_sm.png" class="img-responsive" style="width:20%;margin:auto;"
-            alt="logo">
+        <i class="fa fa-plus-square" style="color:#3c8dbc;"></i>
 
     </div>
 
     <div class="login-box-body">
 
-        <p class="login-box-msg">Inicia sesión</p>
+        <p class="login-box-msg" style="color:#3c8dbc;"><strong>Inicia sesión</strong></p>
 
         <form method="post">
 
@@ -31,10 +30,10 @@
 
             </div>
 
-            <div class="box">
+            <div class="box hidden">
 
                 <p>usuario: admin@ghapps.com | contraseña: 123</p>
-                <p>usuario: eperez@gmail.com | contraseña: abc</p> 
+                <p>usuario: eperez@gmail.com | contraseña: abc</p>
                 <p>usuario: marycruz@gmail.com | contraseña: ale</p>
 
             </div>
@@ -43,18 +42,17 @@
 
     <div class="row">
 
-        <div class="col-xs-4">
-
+        <div class="col-xs-12">
             <button type="submit" class="btn btn-primary btn-block btn-flat">Ingresar</button>
-
         </div>
+
 
         <?php 
 
-                    $login = new ControladorUsuarios();
-                    $login -> ctrIngresoUsuario();
+            $login = new ControladorUsuarios();
+            $login -> ctrIngresoUsuario();
 
-                ?>
+        ?>
 
     </div>
 

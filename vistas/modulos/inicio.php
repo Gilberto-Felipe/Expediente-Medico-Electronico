@@ -1,77 +1,62 @@
-
 <div class="content-wrapper">
 
-  <section class="content-header">
+    <section class="content-header">
 
-    <h1>
+        <h1>
 
-      ECE (Expediente Clínico Electrónico)
+            ECE (Expediente Clínico Electrónico)
 
-      <small>Aplicación web</small>
-      
-    </h1>
+            <small>Aplicación web</small>
 
-    <ol class="breadcrumb">
+        </h1>
 
-      <li><a href="inicio"><i class="fa fa-dashboard"></i>ECE</a></li>
+        <ol class="breadcrumb">
 
-      <li class="active">Inicio</li>
+            <li><a href="inicio"><i class="fa fa-dashboard"></i>ECE</a></li>
 
-    </ol>
+            <li class="active">Inicio</li>
 
-  </section>
+        </ol>
+
+    </section>
 
 
-  <section class="content">
+    <section class="content">
 
-    <!-- Default box -->
-    <div class="box">
+        <!-- Default box -->
+        <div class="box" style="height:68vh;">
 
-      <div class="box-header with-border" style="padding:0rem 5rem;">
+            <div class="box-header">
 
-        <h1 class="title"><Inicio>Expediente Clínico Electrónico</Inicio></h1>
+                <h3 class="title text-center">
+                    <Inicio>Página de Incio</Inicio>
+                </h3>
 
-        <p class="box-title" style="padding-top:0rem">Esta es la página de Inicio. Desde aquí se puede dirigir a expedientes, consultas y estudios.</p>
+            </div><!-- .box-header -->
 
-        <div class="box-tools pull-right">
+            <!-- box-body -->
+            <div class="box-body container" style="padding:2rem 0">
+                <div class="row">
 
-      </div>
+                    <div class="col-sm-3"></div>
 
-      <!-- box-body -->
-      <div style="padding:6rem 0rem;">
-        <div class="row">
-          <div class="col-sm-3"></div>
-          <div class="col-sm-3 center-block">    
-            <a href="expedientes" class="thumbnail btn btn-success" role="button" style="width:22rem; height:18rem; border-radius:10px;">
-              <div class="text-center">
-                <i class="fa fa-address-book" style="font-size:8rem; padding-top:2rem; color:black;" aria-hidden="true"></i>
-              </div>
-              <div class="caption">
-                <h3 class="text-center" style="color:black;">Expedientes</h3>
-              </div>
-            </a> 
-          </div>
+                    <div class="col-sm-3 text-center">
+                        <a href="expedientes" class="btn btn-lg bg-green" role="button" style=""><i
+                                class="fa fa-address-book"></i> Expedientes</a>
+                    </div>
 
-          <div class="col-sm-3">          
-            <a href="consultas" class="thumbnail btn btn-warning" role="button" style="width:22rem; height:18rem; border-radius:10px;">
-              <div class="text-center">
-                <i class="fa fa-stethoscope" style="font-size:8rem; padding-top:2rem; color:black;" aria-hidden="true"></i>
-              </div>
-              <div class="caption">
-                <h3 class="text-center" style="color:black">Consultas</h3>
-              </div>
-            </a>
-          </div>
-          <div class="col-sm-3"></div>
-        </div>
-        <!-- raw -->
-      </div>
-      <!-- /.box-body -->
+                    <div class="col-sm-3 text-center">
+                        <a href="consultas" class="btn btn-lg bg-yellow" role="button"><i
+                                class="fa fa-stethoscope"></i> Consultas</a>
+                    </div>
 
-    </div>
-    <!-- /.box -->
+                    <div class="col-sm-3"></div>
+                </div><!-- raw -->
+            </div><!-- /.box-body -->
 
-  </section>
-  <!-- /.content -->
+        </div><!-- /.box -->
+
+    </section>
+    <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
