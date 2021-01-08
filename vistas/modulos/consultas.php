@@ -10,8 +10,13 @@ if (isset($_GET['idExpediente'])): ?>
     $valor = $idExpediente;
 
     $consultas = ControladorConsultas::ctrMostrarConsultas($item, $valor);
-    $nombre_paciente = $consultas[0]["nombre_paciente"];
-    //var_dump($consultas); 
+
+    if ($consultas == null) {
+        $nombrePaciente = "";
+    } else {
+        //var_dump($consultas); 
+        $nombrePaciente = $consultas[0]["nombre_paciente"];
+    }
 
     ?>
 
@@ -28,7 +33,7 @@ if (isset($_GET['idExpediente'])): ?>
       <section class="content">
           <div class="box">
               <div class="box-header with-border">
-                  <h4><?php echo $nombre_paciente ?></h4>
+                  <h4><?php echo $nombrePaciente ?></h4>
               </div>
 
               <div class="box-body">
