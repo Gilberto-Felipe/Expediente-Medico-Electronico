@@ -4,7 +4,7 @@
 	=            LOGOTIPO		          	=
 	======================================-->
 
-    <a href="inicio" class="logo">
+    <a href="inicio" class="logo hidden-xs">
 
         <!-- logo mini -->
         <span class="logo-mini">

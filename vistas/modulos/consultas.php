@@ -11,11 +11,11 @@ if (isset($_GET['idExpediente'])): ?>
 
     $consultas = ControladorConsultas::ctrMostrarConsultas($item, $valor);
 
-    if ($consultas == null) {
-        $nombrePaciente = "";
-    } else {
+    if ($consultas != null) {
         //var_dump($consultas); 
         $nombrePaciente = $consultas[0]["nombre_paciente"];
+    } else {
+        $nombrePaciente = "";
     }
 
     ?>

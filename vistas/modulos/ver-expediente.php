@@ -96,12 +96,12 @@
             <div class="box-header with-border" style="padding:0 3rem;">
 
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-sm-6">
                         <h3 class="title" name="nombre_paciente">
                             <?php echo $nombre_completo;?>
                         </h3>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-sm-6">
                         <h3 class="text-right" id="rec_idPaciente">Exp-<?php echo $idExpediente;?>
                         </h3>
                     </div>
