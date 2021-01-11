@@ -16,7 +16,8 @@
         <!-- logo normal -->
         <span class="logo-lg">
 
-            <img src="vistas/img/plantilla/ghapps_logo.png" class="img-responsive" style="max-width:50%; padding:10px 0px;" alt="logo empresa">
+            <img src="vistas/img/plantilla/ghapps_logo.png" class="img-responsive"
+                style="max-width:50%; padding:10px 0px;" alt="logo empresa">
 
         </span>
 
@@ -73,6 +74,14 @@
                     <ul class="dropdown-menu">
 
                         <li class="user-body">
+
+                            <?php
+                                echo '<p class="text-center" style="color:#3c8dbc;">'.$_SESSION["usuario"].'</p>';
+                            ?>
+
+                        </li>
+
+                        <li class="user-footer">
 
                             <div class="pull-right">
 
